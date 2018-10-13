@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="mtest_www:war">
+    <output-path>$PROJECT_DIR$/mtest_www/target</output-path>
+    <root id="archive" name="mtest_www.war">
+      <element id="artifact" artifact-name="mtest_www:war exploded" />
+    </root>
+  </artifact>
+</component>

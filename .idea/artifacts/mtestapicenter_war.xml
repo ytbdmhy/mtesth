@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="mtestapicenter:war">
+    <output-path>$PROJECT_DIR$/mtestapicenter/target</output-path>
+    <root id="archive" name="mtestapicenter.war">
+      <element id="artifact" artifact-name="mtestapicenter:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mtest_apicenter" />
+        <module name="mtest_backend" />
+        <module name="mtest_base" />
+        <module name="mtest_common_api" />
+        <module name="mtest_content_api" />
+        <module name="mtest_fileservice" />
+        <module name="mtest_forum_api" />
+        <module name="mtest_log_api" />
+        <module name="mtest_task" />
+        <module name="mtest_user_api" />
+        <module name="mtest_www" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mtest_apicenter" target="1.7" />
+      <module name="mtest_backend" target="1.7" />
+      <module name="mtest_base" target="1.7" />
+      <module name="mtest_common_api" target="1.7" />
+      <module name="mtest_content_api" target="1.7" />
+      <module name="mtest_fileservice" target="1.7" />
+      <module name="mtest_forum_api" target="1.7" />
+      <module name="mtest_log_api" target="1.7" />
+      <module name="mtest_task" target="1.7" />
+      <module name="mtest_user_api" target="1.7" />
+      <module name="mtest_www" target="1.7" />
+      <module name="mtestapicenter" target="1.7" />
+      <module name="mtesth" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
