@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="mtest_backend:war">
     <output-path>$PROJECT_DIR$/mtest_backend/target</output-path>
-    <root id="archive" name="mtest_backend.war">
+    <root id="archive" name="mtest_backend-dev.war">
       <element id="artifact" artifact-name="mtest_backend:war exploded" />
     </root>
   </artifact>
