@@ -7,12 +7,9 @@
       <module fileurl="file://$PROJECT_DIR$/mtest_base/mtest_base.iml" filepath="$PROJECT_DIR$/mtest_base/mtest_base.iml" />
       <module fileurl="file://$PROJECT_DIR$/mtest_common_api/mtest_common_api.iml" filepath="$PROJECT_DIR$/mtest_common_api/mtest_common_api.iml" />
       <module fileurl="file://$PROJECT_DIR$/mtest_content_api/mtest_content_api.iml" filepath="$PROJECT_DIR$/mtest_content_api/mtest_content_api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mtest_fileservice/mtest_fileservice.iml" filepath="$PROJECT_DIR$/mtest_fileservice/mtest_fileservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/mtest_forum_api/mtest_forum_api.iml" filepath="$PROJECT_DIR$/mtest_forum_api/mtest_forum_api.iml" />
       <module fileurl="file://$PROJECT_DIR$/mtest_log_api/mtest_log_api.iml" filepath="$PROJECT_DIR$/mtest_log_api/mtest_log_api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mtest_task/mtest_task.iml" filepath="$PROJECT_DIR$/mtest_task/mtest_task.iml" />
       <module fileurl="file://$PROJECT_DIR$/mtest_user_api/mtest_user_api.iml" filepath="$PROJECT_DIR$/mtest_user_api/mtest_user_api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mtest_www/mtest_www.iml" filepath="$PROJECT_DIR$/mtest_www/mtest_www.iml" />
       <module fileurl="file://$PROJECT_DIR$/mtesth.iml" filepath="$PROJECT_DIR$/mtesth.iml" />
     </modules>
   </component>

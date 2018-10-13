@@ -14,12 +14,12 @@
         <module>mtest_base</module>
         <module>mtest_common_api</module>
         <module>mtest_content_api</module>
-        <module>mtest_fileservice</module>
+        <!--<module>mtest_fileservice</module>-->
         <module>mtest_forum_api</module>
         <module>mtest_log_api</module>
-        <module>mtest_task</module>
+        <!--<module>mtest_task</module>-->
         <module>mtest_user_api</module>
-        <module>mtest_www</module>
+        <!--<module>mtest_www</module>-->
     </modules>
 
     <properties>
@@ -35,5 +35,6 @@
             <url>http://maven.ccplay.cc/content/groups/public/</url>
         </repository>
     </repositories>
+
 
 </project>

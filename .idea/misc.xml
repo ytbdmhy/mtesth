@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/mtest_apicenter" />
     <file type="web" url="file://$PROJECT_DIR$/mtest_backend" />
     <file type="web" url="file://$PROJECT_DIR$/mtest_base" />
     <file type="web" url="file://$PROJECT_DIR$/mtest_common_api" />
@@ -21,7 +22,9 @@
     </option>
     <option name="ignoredFiles">
       <set>
-        <option value="$PROJECT_DIR$/mtestapicenter/pom.xml" />
+        <option value="$PROJECT_DIR$/mtest_fileservice/pom.xml" />
+        <option value="$PROJECT_DIR$/mtest_task/pom.xml" />
+        <option value="$PROJECT_DIR$/mtest_www/pom.xml" />
       </set>
     </option>
   </component>
