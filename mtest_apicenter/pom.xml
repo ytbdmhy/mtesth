@@ -160,6 +160,7 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <version>${spring.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- DAO -->
@@ -280,7 +281,6 @@
                 </includes>
                 <filtering>true</filtering>
             </resource> -->
-
         </resources>
     </build>
 </project>

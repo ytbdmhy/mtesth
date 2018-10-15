@@ -20,7 +20,7 @@
       <module name="mtest_apicenter" target="1.6" />
       <module name="mtest_backend" target="1.6" />
       <module name="mtest_base" target="1.6" />
-      <module name="mtest_common_api" target="1.7" />
+      <module name="mtest_common_api" target="1.6" />
       <module name="mtest_content_api" target="1.7" />
       <module name="mtest_fileservice" target="1.7" />
       <module name="mtest_forum_api" target="1.7" />
