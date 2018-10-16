@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		http://www.springframework.org/schema/aop         
+     	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+     	http://www.springframework.org/schema/task
+     	http://www.springframework.org/schema/task/spring-task-3.0.xsd     	
+        http://www.springframework.org/schema/jdbc
+        http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd">
+        
+	<bean id="commonApiProxy" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">  
+	    <property name="serviceUrl" value="${common.remote.server}"/>  
+	    <property name="serviceInterface" value="com.hgv.base.service.CommonApiProxy"/>
+	</bean> 
+	
+	<bean id="contentApiProxy" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">  
+	    <property name="serviceUrl" value="${content.remote.server}"/>  
+	    <property name="serviceInterface" value="com.hgv.base.service.ContentApiProxy"/>
+	</bean> 
+	
+	<bean id="logApiProxy" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">  
+	    <property name="serviceUrl" value="${log.remote.server}"/>  
+	    <property name="serviceInterface" value="com.hgv.base.service.LogApiProxy"/>
+	</bean>
+	
+	<bean id="forumApiProxy" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">  
+	    <property name="serviceUrl" value="${forum.remote.server}"/>  
+	    <property name="serviceInterface" value="com.hgv.base.service.ForumApiProxy"/>
+	</bean>
+	  
+<!-- 	<bean id="commonApiProxy" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> -->
+<!-- 		<property name="serviceUrl" value="${common.rmi.server}" /> -->
+<!-- 		<property name="serviceInterface" value="com.hgv.base.service.CommonApiProxy" /> -->
+<!-- 		<property name="lookupStubOnStartup" value="false" /> -->
+<!-- 		<property name="refreshStubOnConnectFailure" value="true" /> -->
+<!-- 		##<property name="cacheStub" value="false" /> -->
+<!-- 	</bean> -->
+<!-- 	<bean id="contentApiProxy" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> -->
+<!-- 		<property name="serviceUrl" value="${content.rmi.server}" /> -->
+<!-- 		<property name="serviceInterface" value="com.hgv.base.service.ContentApiProxy" /> -->
+<!-- 		<property name="lookupStubOnStartup" value="false" /> -->
+<!-- 		<property name="refreshStubOnConnectFailure" value="true" /> -->
+<!--  		##<property name="cacheStub" value="false" />  -->
+<!-- 	</bean> -->
+<!-- 	<bean id="logApiProxy" class="org.springframework.remoting.rmi.RmiProxyFactoryBean"> -->
+<!-- 		<property name="serviceUrl" value="${log.rmi.server}" /> -->
+<!-- 		<property name="serviceInterface" value="com.hgv.base.service.LogApiProxy" /> -->
+<!-- 		<property name="lookupStubOnStartup" value="false" /> -->
+<!-- 		<property name="refreshStubOnConnectFailure" value="true" /> -->
+<!-- 		##<property name="cacheStub" value="false" /> -->
+<!-- 	</bean> -->
+</beans>

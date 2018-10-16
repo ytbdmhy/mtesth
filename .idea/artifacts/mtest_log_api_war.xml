@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="mtest_log_api:war">
     <output-path>$PROJECT_DIR$/mtest_log_api/target</output-path>
-    <root id="archive" name="mtest_log_api.war">
+    <root id="archive" name="mtest_log_api-dev.war">
       <element id="artifact" artifact-name="mtest_log_api:war exploded" />
     </root>
   </artifact>

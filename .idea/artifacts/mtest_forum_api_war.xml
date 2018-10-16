@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="mtest_forum_api:war">
     <output-path>$PROJECT_DIR$/mtest_forum_api/target</output-path>
-    <root id="archive" name="mtest_forum_api.war">
+    <root id="archive" name="mtest_forum_api-dev.war">
       <element id="artifact" artifact-name="mtest_forum_api:war exploded" />
     </root>
   </artifact>
