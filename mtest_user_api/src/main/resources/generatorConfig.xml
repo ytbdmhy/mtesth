@@ -39,8 +39,34 @@
         </javaClientGenerator>
 
         <!-- 对应数据库表 mysql可以加入主键自增 字段命名 忽略某字段等 -->
-        <table tableName="account_userappbind" domainObjectName="AccountUserappbind" enableCountByExample="false"
+        <table tableName="sys_menu" domainObjectName="SysMenu" enableCountByExample="false"
             enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="sys_role" domainObjectName="SysRole" enableCountByExample="false"
+               enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="sys_role_menu" domainObjectName="SysRoleMenu" enableCountByExample="false"
+               enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="sys_user" domainObjectName="SysUser" enableCountByExample="false"
+               enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="sys_user_role" domainObjectName="SysUserRole" enableCountByExample="false"
+               enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="user_account" domainObjectName="UserAccount" enableCountByExample="false"
+               enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="user_bookmark" domainObjectName="UserBookmark" enableCountByExample="false"
+               enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="user_comment_feedback" domainObjectName="UserCommentFeedback" enableCountByExample="false"
+               enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="user_comment_feedbacktype" domainObjectName="UserCommentFeedbacktype" enableCountByExample="false"
+               enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="user_login_token" domainObjectName="UserLoginToken" enableCountByExample="false"
+               enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="user_profile" domainObjectName="UserProfile" enableCountByExample="false"
+               enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="user_push_ref" domainObjectName="UserPushRef" enableCountByExample="false"
+               enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="user_register_login" domainObjectName="UserRegisterLogin" enableCountByExample="false"
+               enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="user_system_message" domainObjectName="UserSystemMessage" enableCountByExample="false"
+               enableDeleteByExample="false" enableUpdateByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
     </context>
 
 
