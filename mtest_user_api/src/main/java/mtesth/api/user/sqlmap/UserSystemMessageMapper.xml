@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.user.dao.UserSystemMessageMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.user.model.UserSystemMessage" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="message_title" property="messageTitle" jdbcType="VARCHAR" />
+    <result column="message_content" property="messageContent" jdbcType="VARCHAR" />
+    <result column="message_format" property="messageFormat" jdbcType="VARCHAR" />
+    <result column="page_name" property="pageName" jdbcType="VARCHAR" />
+    <result column="content_type" property="contentType" jdbcType="VARCHAR" />
+    <result column="object_id" property="objectId" jdbcType="VARCHAR" />
+    <result column="object_title" property="objectTitle" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="site_id" property="siteId" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="is_delete" property="isDelete" jdbcType="INTEGER" />
+    <result column="need_push" property="needPush" jdbcType="INTEGER" />
+    <result column="can_push" property="canPush" jdbcType="INTEGER" />
+    <result column="push_msg" property="pushMsg" jdbcType="VARCHAR" />
+    <result column="push_time" property="pushTime" jdbcType="TIMESTAMP" />
+    <result column="push_flag" property="pushFlag" jdbcType="INTEGER" />
+    <result column="app_name" property="appName" jdbcType="VARCHAR" />
+    <result column="audit_by" property="auditBy" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insertSelective" parameterType="mtesth.api.user.model.UserSystemMessage" >
+    insert into user_system_message
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="messageTitle != null" >
+        message_title,
+      </if>
+      <if test="messageContent != null" >
+        message_content,
+      </if>
+      <if test="messageFormat != null" >
+        message_format,
+      </if>
+      <if test="pageName != null" >
+        page_name,
+      </if>
+      <if test="contentType != null" >
+        content_type,
+      </if>
+      <if test="objectId != null" >
+        object_id,
+      </if>
+      <if test="objectTitle != null" >
+        object_title,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="siteId != null" >
+        site_id,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="isDelete != null" >
+        is_delete,
+      </if>
+      <if test="needPush != null" >
+        need_push,
+      </if>
+      <if test="canPush != null" >
+        can_push,
+      </if>
+      <if test="pushMsg != null" >
+        push_msg,
+      </if>
+      <if test="pushTime != null" >
+        push_time,
+      </if>
+      <if test="pushFlag != null" >
+        push_flag,
+      </if>
+      <if test="appName != null" >
+        app_name,
+      </if>
+      <if test="auditBy != null" >
+        audit_by,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="messageTitle != null" >
+        #{messageTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="messageContent != null" >
+        #{messageContent,jdbcType=VARCHAR},
+      </if>
+      <if test="messageFormat != null" >
+        #{messageFormat,jdbcType=VARCHAR},
+      </if>
+      <if test="pageName != null" >
+        #{pageName,jdbcType=VARCHAR},
+      </if>
+      <if test="contentType != null" >
+        #{contentType,jdbcType=VARCHAR},
+      </if>
+      <if test="objectId != null" >
+        #{objectId,jdbcType=VARCHAR},
+      </if>
+      <if test="objectTitle != null" >
+        #{objectTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="siteId != null" >
+        #{siteId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null" >
+        #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="needPush != null" >
+        #{needPush,jdbcType=INTEGER},
+      </if>
+      <if test="canPush != null" >
+        #{canPush,jdbcType=INTEGER},
+      </if>
+      <if test="pushMsg != null" >
+        #{pushMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="pushTime != null" >
+        #{pushTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pushFlag != null" >
+        #{pushFlag,jdbcType=INTEGER},
+      </if>
+      <if test="appName != null" >
+        #{appName,jdbcType=VARCHAR},
+      </if>
+      <if test="auditBy != null" >
+        #{auditBy,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

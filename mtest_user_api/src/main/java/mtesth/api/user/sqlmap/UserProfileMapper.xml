@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.user.dao.UserProfileMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.user.model.UserProfile" >
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="icon" property="icon" jdbcType="VARCHAR" />
+    <result column="experience" property="experience" jdbcType="INTEGER" />
+    <result column="current_level" property="currentLevel" jdbcType="INTEGER" />
+    <result column="platform" property="platform" jdbcType="VARCHAR" />
+    <result column="user_type" property="userType" jdbcType="VARCHAR" />
+    <result column="vip_flag" property="vipFlag" jdbcType="INTEGER" />
+    <result column="vip_level" property="vipLevel" jdbcType="INTEGER" />
+    <result column="update_datetime" property="updateDatetime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <insert id="insertSelective" parameterType="mtesth.api.user.model.UserProfile" >
+    insert into user_profile
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="icon != null" >
+        icon,
+      </if>
+      <if test="experience != null" >
+        experience,
+      </if>
+      <if test="currentLevel != null" >
+        current_level,
+      </if>
+      <if test="platform != null" >
+        platform,
+      </if>
+      <if test="userType != null" >
+        user_type,
+      </if>
+      <if test="vipFlag != null" >
+        vip_flag,
+      </if>
+      <if test="vipLevel != null" >
+        vip_level,
+      </if>
+      <if test="updateDatetime != null" >
+        update_datetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="icon != null" >
+        #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="experience != null" >
+        #{experience,jdbcType=INTEGER},
+      </if>
+      <if test="currentLevel != null" >
+        #{currentLevel,jdbcType=INTEGER},
+      </if>
+      <if test="platform != null" >
+        #{platform,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null" >
+        #{userType,jdbcType=VARCHAR},
+      </if>
+      <if test="vipFlag != null" >
+        #{vipFlag,jdbcType=INTEGER},
+      </if>
+      <if test="vipLevel != null" >
+        #{vipLevel,jdbcType=INTEGER},
+      </if>
+      <if test="updateDatetime != null" >
+        #{updateDatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

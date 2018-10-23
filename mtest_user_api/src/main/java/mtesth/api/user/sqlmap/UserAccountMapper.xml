@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.user.dao.UserAccountMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.user.model.UserAccount" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="is_superuser" property="isSuperuser" jdbcType="TINYINT" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="nick_name" property="nickName" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="delete_flag" property="deleteFlag" jdbcType="INTEGER" />
+    <result column="fake_flag" property="fakeFlag" jdbcType="INTEGER" />
+    <result column="update_datetime" property="updateDatetime" jdbcType="TIMESTAMP" />
+    <result column="bbs_username" property="bbsUsername" jdbcType="VARCHAR" />
+    <result column="bbs_passwd" property="bbsPasswd" jdbcType="VARCHAR" />
+    <result column="bbs_uid" property="bbsUid" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insertSelective" parameterType="mtesth.api.user.model.UserAccount" >
+    insert into user_account
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="isSuperuser != null" >
+        is_superuser,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="nickName != null" >
+        nick_name,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="deleteFlag != null" >
+        delete_flag,
+      </if>
+      <if test="fakeFlag != null" >
+        fake_flag,
+      </if>
+      <if test="updateDatetime != null" >
+        update_datetime,
+      </if>
+      <if test="bbsUsername != null" >
+        bbs_username,
+      </if>
+      <if test="bbsPasswd != null" >
+        bbs_passwd,
+      </if>
+      <if test="bbsUid != null" >
+        bbs_uid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="isSuperuser != null" >
+        #{isSuperuser,jdbcType=TINYINT},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null" >
+        #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteFlag != null" >
+        #{deleteFlag,jdbcType=INTEGER},
+      </if>
+      <if test="fakeFlag != null" >
+        #{fakeFlag,jdbcType=INTEGER},
+      </if>
+      <if test="updateDatetime != null" >
+        #{updateDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="bbsUsername != null" >
+        #{bbsUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="bbsPasswd != null" >
+        #{bbsPasswd,jdbcType=VARCHAR},
+      </if>
+      <if test="bbsUid != null" >
+        #{bbsUid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

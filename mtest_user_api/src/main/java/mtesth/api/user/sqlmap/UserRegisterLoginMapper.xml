@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.user.dao.UserRegisterLoginMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.user.model.UserRegisterLogin" >
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="register_date" property="registerDate" jdbcType="DATE" />
+    <result column="register_datetime" property="registerDatetime" jdbcType="TIMESTAMP" />
+    <result column="register_ip" property="registerIp" jdbcType="VARCHAR" />
+    <result column="register_device_no" property="registerDeviceNo" jdbcType="VARCHAR" />
+    <result column="register_os_version" property="registerOsVersion" jdbcType="VARCHAR" />
+    <result column="register_way" property="registerWay" jdbcType="VARCHAR" />
+    <result column="register_source" property="registerSource" jdbcType="VARCHAR" />
+    <result column="login_count" property="loginCount" jdbcType="INTEGER" />
+    <result column="last_login_date" property="lastLoginDate" jdbcType="DATE" />
+    <result column="last_login_datetime" property="lastLoginDatetime" jdbcType="TIMESTAMP" />
+    <result column="last_login_ip" property="lastLoginIp" jdbcType="VARCHAR" />
+    <result column="last_login_device_no" property="lastLoginDeviceNo" jdbcType="VARCHAR" />
+    <result column="update_datetime" property="updateDatetime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <insert id="insertSelective" parameterType="mtesth.api.user.model.UserRegisterLogin" >
+    insert into user_register_login
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="registerDate != null" >
+        register_date,
+      </if>
+      <if test="registerDatetime != null" >
+        register_datetime,
+      </if>
+      <if test="registerIp != null" >
+        register_ip,
+      </if>
+      <if test="registerDeviceNo != null" >
+        register_device_no,
+      </if>
+      <if test="registerOsVersion != null" >
+        register_os_version,
+      </if>
+      <if test="registerWay != null" >
+        register_way,
+      </if>
+      <if test="registerSource != null" >
+        register_source,
+      </if>
+      <if test="loginCount != null" >
+        login_count,
+      </if>
+      <if test="lastLoginDate != null" >
+        last_login_date,
+      </if>
+      <if test="lastLoginDatetime != null" >
+        last_login_datetime,
+      </if>
+      <if test="lastLoginIp != null" >
+        last_login_ip,
+      </if>
+      <if test="lastLoginDeviceNo != null" >
+        last_login_device_no,
+      </if>
+      <if test="updateDatetime != null" >
+        update_datetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="registerDate != null" >
+        #{registerDate,jdbcType=DATE},
+      </if>
+      <if test="registerDatetime != null" >
+        #{registerDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="registerIp != null" >
+        #{registerIp,jdbcType=VARCHAR},
+      </if>
+      <if test="registerDeviceNo != null" >
+        #{registerDeviceNo,jdbcType=VARCHAR},
+      </if>
+      <if test="registerOsVersion != null" >
+        #{registerOsVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="registerWay != null" >
+        #{registerWay,jdbcType=VARCHAR},
+      </if>
+      <if test="registerSource != null" >
+        #{registerSource,jdbcType=VARCHAR},
+      </if>
+      <if test="loginCount != null" >
+        #{loginCount,jdbcType=INTEGER},
+      </if>
+      <if test="lastLoginDate != null" >
+        #{lastLoginDate,jdbcType=DATE},
+      </if>
+      <if test="lastLoginDatetime != null" >
+        #{lastLoginDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLoginIp != null" >
+        #{lastLoginIp,jdbcType=VARCHAR},
+      </if>
+      <if test="lastLoginDeviceNo != null" >
+        #{lastLoginDeviceNo,jdbcType=VARCHAR},
+      </if>
+      <if test="updateDatetime != null" >
+        #{updateDatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>
