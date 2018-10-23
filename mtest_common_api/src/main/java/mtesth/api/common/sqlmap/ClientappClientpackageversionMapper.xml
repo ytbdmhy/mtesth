@@ -29,24 +29,6 @@
   <sql id="Blob_Column_List" >
     memorandum, whatsnew
   </sql>
-  <insert id="insert" parameterType="mtesth.api.common.model.ClientappClientpackageversionWithBLOBs" >
-    insert into clientapp_clientpackageversion (id, icon, cover, 
-      package_name, download, download_size, 
-      download_count, version_name, version_code, 
-      summary, status, released_datetime, 
-      created_datetime, updated_datetime, site_id, 
-      resources_count, workspace, must_update_flag, 
-      client_cpu_architecture, memorandum, 
-      whatsnew)
-    values (#{id,jdbcType=INTEGER}, #{icon,jdbcType=VARCHAR}, #{cover,jdbcType=VARCHAR}, 
-      #{packageName,jdbcType=VARCHAR}, #{download,jdbcType=VARCHAR}, #{downloadSize,jdbcType=INTEGER}, 
-      #{downloadCount,jdbcType=INTEGER}, #{versionName,jdbcType=VARCHAR}, #{versionCode,jdbcType=INTEGER}, 
-      #{summary,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{releasedDatetime,jdbcType=TIMESTAMP}, 
-      #{createdDatetime,jdbcType=TIMESTAMP}, #{updatedDatetime,jdbcType=TIMESTAMP}, #{siteId,jdbcType=INTEGER}, 
-      #{resourcesCount,jdbcType=INTEGER}, #{workspace,jdbcType=VARCHAR}, #{mustUpdateFlag,jdbcType=INTEGER}, 
-      #{clientCpuArchitecture,jdbcType=VARCHAR}, #{memorandum,jdbcType=LONGVARCHAR}, 
-      #{whatsnew,jdbcType=LONGVARCHAR})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.common.model.ClientappClientpackageversionWithBLOBs" >
     insert into clientapp_clientpackageversion
     <trim prefix="(" suffix=")" suffixOverrides="," >
