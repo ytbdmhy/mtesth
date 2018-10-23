@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.content.dao.WarehousePackageMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.content.model.WarehousePackage" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="package_name" property="packageName" jdbcType="VARCHAR" />
+    <result column="platform_type" property="platformType" jdbcType="VARCHAR" />
+    <result column="summary" property="summary" jdbcType="VARCHAR" />
+    <result column="tags_text" property="tagsText" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="download_count" property="downloadCount" jdbcType="INTEGER" />
+    <result column="site_id" property="siteId" jdbcType="INTEGER" />
+    <result column="root_category_id" property="rootCategoryId" jdbcType="INTEGER" />
+    <result column="latest_version_id" property="latestVersionId" jdbcType="INTEGER" />
+    <result column="delete_flag" property="deleteFlag" jdbcType="INTEGER" />
+    <result column="standard_category_id" property="standardCategoryId" jdbcType="INTEGER" />
+    <result column="standard_category_names" property="standardCategoryNames" jdbcType="VARCHAR" />
+    <result column="download_click_count" property="downloadClickCount" jdbcType="INTEGER" />
+    <result column="download_complete_count" property="downloadCompleteCount" jdbcType="INTEGER" />
+    <result column="released_datetime" property="releasedDatetime" jdbcType="TIMESTAMP" />
+    <result column="created_datetime" property="createdDatetime" jdbcType="TIMESTAMP" />
+    <result column="updated_datetime" property="updatedDatetime" jdbcType="TIMESTAMP" />
+    <result column="last_modified" property="lastModified" jdbcType="TIMESTAMP" />
+    <result column="ios_package_id" property="iosPackageId" jdbcType="INTEGER" />
+    <result column="keyword" property="keyword" jdbcType="VARCHAR" />
+    <result column="description_seo" property="descriptionSeo" jdbcType="VARCHAR" />
+    <result column="author_id" property="authorId" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="mtesth.api.content.model.WarehousePackageWithBLOBs" extends="BaseResultMap" >
+    <result column="description" property="description" jdbcType="LONGVARCHAR" />
+    <result column="adapted_infomation" property="adaptedInfomation" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Blob_Column_List" >
+    description, adapted_infomation
+  </sql>
+  <insert id="insert" parameterType="mtesth.api.content.model.WarehousePackageWithBLOBs" >
+    insert into warehouse_package (id, title, package_name, 
+      platform_type, summary, tags_text, 
+      status, download_count, site_id, 
+      root_category_id, latest_version_id, delete_flag, 
+      standard_category_id, standard_category_names, 
+      download_click_count, download_complete_count, 
+      released_datetime, created_datetime, 
+      updated_datetime, last_modified, ios_package_id, 
+      keyword, description_seo, author_id, 
+      description, adapted_infomation)
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{packageName,jdbcType=VARCHAR}, 
+      #{platformType,jdbcType=VARCHAR}, #{summary,jdbcType=VARCHAR}, #{tagsText,jdbcType=VARCHAR}, 
+      #{status,jdbcType=VARCHAR}, #{downloadCount,jdbcType=INTEGER}, #{siteId,jdbcType=INTEGER}, 
+      #{rootCategoryId,jdbcType=INTEGER}, #{latestVersionId,jdbcType=INTEGER}, #{deleteFlag,jdbcType=INTEGER}, 
+      #{standardCategoryId,jdbcType=INTEGER}, #{standardCategoryNames,jdbcType=VARCHAR}, 
+      #{downloadClickCount,jdbcType=INTEGER}, #{downloadCompleteCount,jdbcType=INTEGER}, 
+      #{releasedDatetime,jdbcType=TIMESTAMP}, #{createdDatetime,jdbcType=TIMESTAMP}, 
+      #{updatedDatetime,jdbcType=TIMESTAMP}, #{lastModified,jdbcType=TIMESTAMP}, #{iosPackageId,jdbcType=INTEGER}, 
+      #{keyword,jdbcType=VARCHAR}, #{descriptionSeo,jdbcType=VARCHAR}, #{authorId,jdbcType=INTEGER}, 
+      #{description,jdbcType=LONGVARCHAR}, #{adaptedInfomation,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="mtesth.api.content.model.WarehousePackageWithBLOBs" >
+    insert into warehouse_package
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="packageName != null" >
+        package_name,
+      </if>
+      <if test="platformType != null" >
+        platform_type,
+      </if>
+      <if test="summary != null" >
+        summary,
+      </if>
+      <if test="tagsText != null" >
+        tags_text,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="downloadCount != null" >
+        download_count,
+      </if>
+      <if test="siteId != null" >
+        site_id,
+      </if>
+      <if test="rootCategoryId != null" >
+        root_category_id,
+      </if>
+      <if test="latestVersionId != null" >
+        latest_version_id,
+      </if>
+      <if test="deleteFlag != null" >
+        delete_flag,
+      </if>
+      <if test="standardCategoryId != null" >
+        standard_category_id,
+      </if>
+      <if test="standardCategoryNames != null" >
+        standard_category_names,
+      </if>
+      <if test="downloadClickCount != null" >
+        download_click_count,
+      </if>
+      <if test="downloadCompleteCount != null" >
+        download_complete_count,
+      </if>
+      <if test="releasedDatetime != null" >
+        released_datetime,
+      </if>
+      <if test="createdDatetime != null" >
+        created_datetime,
+      </if>
+      <if test="updatedDatetime != null" >
+        updated_datetime,
+      </if>
+      <if test="lastModified != null" >
+        last_modified,
+      </if>
+      <if test="iosPackageId != null" >
+        ios_package_id,
+      </if>
+      <if test="keyword != null" >
+        keyword,
+      </if>
+      <if test="descriptionSeo != null" >
+        description_seo,
+      </if>
+      <if test="authorId != null" >
+        author_id,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="adaptedInfomation != null" >
+        adapted_infomation,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="packageName != null" >
+        #{packageName,jdbcType=VARCHAR},
+      </if>
+      <if test="platformType != null" >
+        #{platformType,jdbcType=VARCHAR},
+      </if>
+      <if test="summary != null" >
+        #{summary,jdbcType=VARCHAR},
+      </if>
+      <if test="tagsText != null" >
+        #{tagsText,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="downloadCount != null" >
+        #{downloadCount,jdbcType=INTEGER},
+      </if>
+      <if test="siteId != null" >
+        #{siteId,jdbcType=INTEGER},
+      </if>
+      <if test="rootCategoryId != null" >
+        #{rootCategoryId,jdbcType=INTEGER},
+      </if>
+      <if test="latestVersionId != null" >
+        #{latestVersionId,jdbcType=INTEGER},
+      </if>
+      <if test="deleteFlag != null" >
+        #{deleteFlag,jdbcType=INTEGER},
+      </if>
+      <if test="standardCategoryId != null" >
+        #{standardCategoryId,jdbcType=INTEGER},
+      </if>
+      <if test="standardCategoryNames != null" >
+        #{standardCategoryNames,jdbcType=VARCHAR},
+      </if>
+      <if test="downloadClickCount != null" >
+        #{downloadClickCount,jdbcType=INTEGER},
+      </if>
+      <if test="downloadCompleteCount != null" >
+        #{downloadCompleteCount,jdbcType=INTEGER},
+      </if>
+      <if test="releasedDatetime != null" >
+        #{releasedDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createdDatetime != null" >
+        #{createdDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedDatetime != null" >
+        #{updatedDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastModified != null" >
+        #{lastModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="iosPackageId != null" >
+        #{iosPackageId,jdbcType=INTEGER},
+      </if>
+      <if test="keyword != null" >
+        #{keyword,jdbcType=VARCHAR},
+      </if>
+      <if test="descriptionSeo != null" >
+        #{descriptionSeo,jdbcType=VARCHAR},
+      </if>
+      <if test="authorId != null" >
+        #{authorId,jdbcType=INTEGER},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="adaptedInfomation != null" >
+        #{adaptedInfomation,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

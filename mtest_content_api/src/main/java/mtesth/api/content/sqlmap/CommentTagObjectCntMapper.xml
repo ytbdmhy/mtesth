@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.content.dao.CommentTagObjectCntMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.content.model.CommentTagObjectCnt" >
+    <result column="object_id" property="objectId" jdbcType="INTEGER" />
+    <result column="content_type" property="contentType" jdbcType="VARCHAR" />
+    <result column="comment_tag_id" property="commentTagId" jdbcType="INTEGER" />
+    <result column="cnt" property="cnt" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <insert id="insert" parameterType="mtesth.api.content.model.CommentTagObjectCnt" >
+    insert into comment_tag_object_cnt (object_id, content_type, comment_tag_id, 
+      cnt, create_time, update_time
+      )
+    values (#{objectId,jdbcType=INTEGER}, #{contentType,jdbcType=VARCHAR}, #{commentTagId,jdbcType=INTEGER}, 
+      #{cnt,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="mtesth.api.content.model.CommentTagObjectCnt" >
+    insert into comment_tag_object_cnt
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="objectId != null" >
+        object_id,
+      </if>
+      <if test="contentType != null" >
+        content_type,
+      </if>
+      <if test="commentTagId != null" >
+        comment_tag_id,
+      </if>
+      <if test="cnt != null" >
+        cnt,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="objectId != null" >
+        #{objectId,jdbcType=INTEGER},
+      </if>
+      <if test="contentType != null" >
+        #{contentType,jdbcType=VARCHAR},
+      </if>
+      <if test="commentTagId != null" >
+        #{commentTagId,jdbcType=INTEGER},
+      </if>
+      <if test="cnt != null" >
+        #{cnt,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

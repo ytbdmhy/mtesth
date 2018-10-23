@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.forum.dao.ForumComplaintMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.forum.model.ForumComplaint" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="complaint_type" property="complaintType" jdbcType="VARCHAR" />
+    <result column="complaint_content" property="complaintContent" jdbcType="VARCHAR" />
+    <result column="object_type" property="objectType" jdbcType="VARCHAR" />
+    <result column="object_id" property="objectId" jdbcType="INTEGER" />
+    <result column="device_no" property="deviceNo" jdbcType="VARCHAR" />
+    <result column="ip_address" property="ipAddress" jdbcType="VARCHAR" />
+    <result column="deal_flag" property="dealFlag" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insert" parameterType="mtesth.api.forum.model.ForumComplaint" >
+    insert into forum_complaint (id, create_time, update_time, 
+      complaint_type, complaint_content, object_type, 
+      object_id, device_no, ip_address, 
+      deal_flag)
+    values (#{id,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{complaintType,jdbcType=VARCHAR}, #{complaintContent,jdbcType=VARCHAR}, #{objectType,jdbcType=VARCHAR}, 
+      #{objectId,jdbcType=INTEGER}, #{deviceNo,jdbcType=VARCHAR}, #{ipAddress,jdbcType=VARCHAR}, 
+      #{dealFlag,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="mtesth.api.forum.model.ForumComplaint" >
+    insert into forum_complaint
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="complaintType != null" >
+        complaint_type,
+      </if>
+      <if test="complaintContent != null" >
+        complaint_content,
+      </if>
+      <if test="objectType != null" >
+        object_type,
+      </if>
+      <if test="objectId != null" >
+        object_id,
+      </if>
+      <if test="deviceNo != null" >
+        device_no,
+      </if>
+      <if test="ipAddress != null" >
+        ip_address,
+      </if>
+      <if test="dealFlag != null" >
+        deal_flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="complaintType != null" >
+        #{complaintType,jdbcType=VARCHAR},
+      </if>
+      <if test="complaintContent != null" >
+        #{complaintContent,jdbcType=VARCHAR},
+      </if>
+      <if test="objectType != null" >
+        #{objectType,jdbcType=VARCHAR},
+      </if>
+      <if test="objectId != null" >
+        #{objectId,jdbcType=INTEGER},
+      </if>
+      <if test="deviceNo != null" >
+        #{deviceNo,jdbcType=VARCHAR},
+      </if>
+      <if test="ipAddress != null" >
+        #{ipAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="dealFlag != null" >
+        #{dealFlag,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

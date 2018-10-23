@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.content.dao.SelectionSectionVideoMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.content.model.SelectionSectionVideo" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="section_id" property="sectionId" jdbcType="INTEGER" />
+    <result column="video_id" property="videoId" jdbcType="INTEGER" />
+    <result column="order_no" property="orderNo" jdbcType="INTEGER" />
+    <result column="is_deleted" property="isDeleted" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_by" property="createBy" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insert" parameterType="mtesth.api.content.model.SelectionSectionVideo" >
+    insert into selection_section_video (id, section_id, video_id, 
+      order_no, is_deleted, create_time, 
+      create_by)
+    values (#{id,jdbcType=INTEGER}, #{sectionId,jdbcType=INTEGER}, #{videoId,jdbcType=INTEGER}, 
+      #{orderNo,jdbcType=INTEGER}, #{isDeleted,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{createBy,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="mtesth.api.content.model.SelectionSectionVideo" >
+    insert into selection_section_video
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="sectionId != null" >
+        section_id,
+      </if>
+      <if test="videoId != null" >
+        video_id,
+      </if>
+      <if test="orderNo != null" >
+        order_no,
+      </if>
+      <if test="isDeleted != null" >
+        is_deleted,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="sectionId != null" >
+        #{sectionId,jdbcType=INTEGER},
+      </if>
+      <if test="videoId != null" >
+        #{videoId,jdbcType=INTEGER},
+      </if>
+      <if test="orderNo != null" >
+        #{orderNo,jdbcType=INTEGER},
+      </if>
+      <if test="isDeleted != null" >
+        #{isDeleted,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

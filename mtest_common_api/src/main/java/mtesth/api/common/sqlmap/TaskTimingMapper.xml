@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.common.dao.TaskTimingMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.common.model.TaskTiming" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="task_type" property="taskType" jdbcType="VARCHAR" />
+    <result column="execute_time" property="executeTime" jdbcType="TIMESTAMP" />
+    <result column="interface_name" property="interfaceName" jdbcType="VARCHAR" />
+    <result column="parameters" property="parameters" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="create_datetime" property="createDatetime" jdbcType="TIMESTAMP" />
+    <result column="update_datetime" property="updateDatetime" jdbcType="TIMESTAMP" />
+    <result column="main_task_id" property="mainTaskId" jdbcType="INTEGER" />
+    <result column="mutex_flag" property="mutexFlag" jdbcType="VARCHAR" />
+    <result column="after_minutes" property="afterMinutes" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insert" parameterType="mtesth.api.common.model.TaskTiming" >
+    insert into task_timing (id, task_type, execute_time, 
+      interface_name, parameters, status, 
+      create_datetime, update_datetime, main_task_id, 
+      mutex_flag, after_minutes)
+    values (#{id,jdbcType=INTEGER}, #{taskType,jdbcType=VARCHAR}, #{executeTime,jdbcType=TIMESTAMP}, 
+      #{interfaceName,jdbcType=VARCHAR}, #{parameters,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{createDatetime,jdbcType=TIMESTAMP}, #{updateDatetime,jdbcType=TIMESTAMP}, #{mainTaskId,jdbcType=INTEGER}, 
+      #{mutexFlag,jdbcType=VARCHAR}, #{afterMinutes,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="mtesth.api.common.model.TaskTiming" >
+    insert into task_timing
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="taskType != null" >
+        task_type,
+      </if>
+      <if test="executeTime != null" >
+        execute_time,
+      </if>
+      <if test="interfaceName != null" >
+        interface_name,
+      </if>
+      <if test="parameters != null" >
+        parameters,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="createDatetime != null" >
+        create_datetime,
+      </if>
+      <if test="updateDatetime != null" >
+        update_datetime,
+      </if>
+      <if test="mainTaskId != null" >
+        main_task_id,
+      </if>
+      <if test="mutexFlag != null" >
+        mutex_flag,
+      </if>
+      <if test="afterMinutes != null" >
+        after_minutes,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="taskType != null" >
+        #{taskType,jdbcType=VARCHAR},
+      </if>
+      <if test="executeTime != null" >
+        #{executeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="interfaceName != null" >
+        #{interfaceName,jdbcType=VARCHAR},
+      </if>
+      <if test="parameters != null" >
+        #{parameters,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createDatetime != null" >
+        #{createDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDatetime != null" >
+        #{updateDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mainTaskId != null" >
+        #{mainTaskId,jdbcType=INTEGER},
+      </if>
+      <if test="mutexFlag != null" >
+        #{mutexFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="afterMinutes != null" >
+        #{afterMinutes,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

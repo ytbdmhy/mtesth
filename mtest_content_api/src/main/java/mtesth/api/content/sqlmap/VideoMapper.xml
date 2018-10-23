@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.content.dao.VideoMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.content.model.Video" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="name_zh" property="nameZh" jdbcType="VARCHAR" />
+    <result column="name_en" property="nameEn" jdbcType="VARCHAR" />
+    <result column="file_size" property="fileSize" jdbcType="INTEGER" />
+    <result column="file_url" property="fileUrl" jdbcType="VARCHAR" />
+    <result column="summary" property="summary" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="mins" property="mins" jdbcType="INTEGER" />
+    <result column="years" property="years" jdbcType="VARCHAR" />
+    <result column="area" property="area" jdbcType="VARCHAR" />
+    <result column="category_ids" property="categoryIds" jdbcType="VARCHAR" />
+    <result column="category_text" property="categoryText" jdbcType="VARCHAR" />
+    <result column="actor" property="actor" jdbcType="VARCHAR" />
+    <result column="grade" property="grade" jdbcType="DECIMAL" />
+    <result column="look_count" property="lookCount" jdbcType="INTEGER" />
+    <result column="real_look_count" property="realLookCount" jdbcType="INTEGER" />
+    <result column="resolution" property="resolution" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="release_time" property="releaseTime" jdbcType="TIMESTAMP" />
+    <result column="create_by" property="createBy" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="video_type" property="videoType" jdbcType="INTEGER" />
+    <result column="tags_text" property="tagsText" jdbcType="VARCHAR" />
+    <result column="seo_keywords" property="seoKeywords" jdbcType="VARCHAR" />
+    <result column="seo_description" property="seoDescription" jdbcType="VARCHAR" />
+    <result column="author_id" property="authorId" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insert" parameterType="mtesth.api.content.model.Video" >
+    insert into video (id, name_zh, name_en, 
+      file_size, file_url, summary, 
+      description, mins, years, 
+      area, category_ids, category_text, 
+      actor, grade, look_count, 
+      real_look_count, resolution, status, 
+      release_time, create_by, create_time, 
+      update_time, video_type, tags_text, 
+      seo_keywords, seo_description, author_id
+      )
+    values (#{id,jdbcType=INTEGER}, #{nameZh,jdbcType=VARCHAR}, #{nameEn,jdbcType=VARCHAR}, 
+      #{fileSize,jdbcType=INTEGER}, #{fileUrl,jdbcType=VARCHAR}, #{summary,jdbcType=VARCHAR}, 
+      #{description,jdbcType=VARCHAR}, #{mins,jdbcType=INTEGER}, #{years,jdbcType=VARCHAR}, 
+      #{area,jdbcType=VARCHAR}, #{categoryIds,jdbcType=VARCHAR}, #{categoryText,jdbcType=VARCHAR}, 
+      #{actor,jdbcType=VARCHAR}, #{grade,jdbcType=DECIMAL}, #{lookCount,jdbcType=INTEGER}, 
+      #{realLookCount,jdbcType=INTEGER}, #{resolution,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{releaseTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{videoType,jdbcType=INTEGER}, #{tagsText,jdbcType=VARCHAR}, 
+      #{seoKeywords,jdbcType=VARCHAR}, #{seoDescription,jdbcType=VARCHAR}, #{authorId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="mtesth.api.content.model.Video" >
+    insert into video
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="nameZh != null" >
+        name_zh,
+      </if>
+      <if test="nameEn != null" >
+        name_en,
+      </if>
+      <if test="fileSize != null" >
+        file_size,
+      </if>
+      <if test="fileUrl != null" >
+        file_url,
+      </if>
+      <if test="summary != null" >
+        summary,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="mins != null" >
+        mins,
+      </if>
+      <if test="years != null" >
+        years,
+      </if>
+      <if test="area != null" >
+        area,
+      </if>
+      <if test="categoryIds != null" >
+        category_ids,
+      </if>
+      <if test="categoryText != null" >
+        category_text,
+      </if>
+      <if test="actor != null" >
+        actor,
+      </if>
+      <if test="grade != null" >
+        grade,
+      </if>
+      <if test="lookCount != null" >
+        look_count,
+      </if>
+      <if test="realLookCount != null" >
+        real_look_count,
+      </if>
+      <if test="resolution != null" >
+        resolution,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="releaseTime != null" >
+        release_time,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="videoType != null" >
+        video_type,
+      </if>
+      <if test="tagsText != null" >
+        tags_text,
+      </if>
+      <if test="seoKeywords != null" >
+        seo_keywords,
+      </if>
+      <if test="seoDescription != null" >
+        seo_description,
+      </if>
+      <if test="authorId != null" >
+        author_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="nameZh != null" >
+        #{nameZh,jdbcType=VARCHAR},
+      </if>
+      <if test="nameEn != null" >
+        #{nameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="fileSize != null" >
+        #{fileSize,jdbcType=INTEGER},
+      </if>
+      <if test="fileUrl != null" >
+        #{fileUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="summary != null" >
+        #{summary,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="mins != null" >
+        #{mins,jdbcType=INTEGER},
+      </if>
+      <if test="years != null" >
+        #{years,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null" >
+        #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="categoryIds != null" >
+        #{categoryIds,jdbcType=VARCHAR},
+      </if>
+      <if test="categoryText != null" >
+        #{categoryText,jdbcType=VARCHAR},
+      </if>
+      <if test="actor != null" >
+        #{actor,jdbcType=VARCHAR},
+      </if>
+      <if test="grade != null" >
+        #{grade,jdbcType=DECIMAL},
+      </if>
+      <if test="lookCount != null" >
+        #{lookCount,jdbcType=INTEGER},
+      </if>
+      <if test="realLookCount != null" >
+        #{realLookCount,jdbcType=INTEGER},
+      </if>
+      <if test="resolution != null" >
+        #{resolution,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="releaseTime != null" >
+        #{releaseTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="videoType != null" >
+        #{videoType,jdbcType=INTEGER},
+      </if>
+      <if test="tagsText != null" >
+        #{tagsText,jdbcType=VARCHAR},
+      </if>
+      <if test="seoKeywords != null" >
+        #{seoKeywords,jdbcType=VARCHAR},
+      </if>
+      <if test="seoDescription != null" >
+        #{seoDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="authorId != null" >
+        #{authorId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

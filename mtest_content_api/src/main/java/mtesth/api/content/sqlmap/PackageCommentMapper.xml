@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.content.dao.PackageCommentMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.content.model.PackageComment" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="package_id" property="packageId" jdbcType="INTEGER" />
+    <result column="site_id" property="siteId" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="user_email" property="userEmail" jdbcType="VARCHAR" />
+    <result column="submit_date" property="submitDate" jdbcType="TIMESTAMP" />
+    <result column="ip_address" property="ipAddress" jdbcType="VARCHAR" />
+    <result column="is_public" property="isPublic" jdbcType="TINYINT" />
+    <result column="is_removed" property="isRemoved" jdbcType="TINYINT" />
+    <result column="user_icon" property="userIcon" jdbcType="VARCHAR" />
+    <result column="user_mobile" property="userMobile" jdbcType="VARCHAR" />
+    <result column="reply_user_id" property="replyUserId" jdbcType="INTEGER" />
+    <result column="reply_content" property="replyContent" jdbcType="VARCHAR" />
+    <result column="reply_datetime" property="replyDatetime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="mtesth.api.content.model.PackageComment" extends="BaseResultMap" >
+    <result column="comment" property="comment" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Blob_Column_List" >
+    comment
+  </sql>
+  <insert id="insert" parameterType="mtesth.api.content.model.PackageComment" >
+    insert into package_comment (id, package_id, site_id, 
+      user_id, user_name, user_email, 
+      submit_date, ip_address, is_public, 
+      is_removed, user_icon, user_mobile, 
+      reply_user_id, reply_content, reply_datetime, 
+      update_time, comment)
+    values (#{id,jdbcType=INTEGER}, #{packageId,jdbcType=INTEGER}, #{siteId,jdbcType=INTEGER}, 
+      #{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{userEmail,jdbcType=VARCHAR}, 
+      #{submitDate,jdbcType=TIMESTAMP}, #{ipAddress,jdbcType=VARCHAR}, #{isPublic,jdbcType=TINYINT}, 
+      #{isRemoved,jdbcType=TINYINT}, #{userIcon,jdbcType=VARCHAR}, #{userMobile,jdbcType=VARCHAR}, 
+      #{replyUserId,jdbcType=INTEGER}, #{replyContent,jdbcType=VARCHAR}, #{replyDatetime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{comment,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="mtesth.api.content.model.PackageComment" >
+    insert into package_comment
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="packageId != null" >
+        package_id,
+      </if>
+      <if test="siteId != null" >
+        site_id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="userName != null" >
+        user_name,
+      </if>
+      <if test="userEmail != null" >
+        user_email,
+      </if>
+      <if test="submitDate != null" >
+        submit_date,
+      </if>
+      <if test="ipAddress != null" >
+        ip_address,
+      </if>
+      <if test="isPublic != null" >
+        is_public,
+      </if>
+      <if test="isRemoved != null" >
+        is_removed,
+      </if>
+      <if test="userIcon != null" >
+        user_icon,
+      </if>
+      <if test="userMobile != null" >
+        user_mobile,
+      </if>
+      <if test="replyUserId != null" >
+        reply_user_id,
+      </if>
+      <if test="replyContent != null" >
+        reply_content,
+      </if>
+      <if test="replyDatetime != null" >
+        reply_datetime,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="comment != null" >
+        comment,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="packageId != null" >
+        #{packageId,jdbcType=INTEGER},
+      </if>
+      <if test="siteId != null" >
+        #{siteId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userEmail != null" >
+        #{userEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="submitDate != null" >
+        #{submitDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ipAddress != null" >
+        #{ipAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="isPublic != null" >
+        #{isPublic,jdbcType=TINYINT},
+      </if>
+      <if test="isRemoved != null" >
+        #{isRemoved,jdbcType=TINYINT},
+      </if>
+      <if test="userIcon != null" >
+        #{userIcon,jdbcType=VARCHAR},
+      </if>
+      <if test="userMobile != null" >
+        #{userMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="replyUserId != null" >
+        #{replyUserId,jdbcType=INTEGER},
+      </if>
+      <if test="replyContent != null" >
+        #{replyContent,jdbcType=VARCHAR},
+      </if>
+      <if test="replyDatetime != null" >
+        #{replyDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="comment != null" >
+        #{comment,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

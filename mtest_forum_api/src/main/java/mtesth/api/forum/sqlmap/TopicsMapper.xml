@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.forum.dao.TopicsMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.forum.model.Topics" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="praise_count" property="praiseCount" jdbcType="INTEGER" />
+    <result column="reply_count" property="replyCount" jdbcType="INTEGER" />
+    <result column="circle_id" property="circleId" jdbcType="INTEGER" />
+    <result column="is_recommend" property="isRecommend" jdbcType="INTEGER" />
+    <result column="recommend_time" property="recommendTime" jdbcType="TIMESTAMP" />
+    <result column="create_by" property="createBy" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="is_deleted" property="isDeleted" jdbcType="INTEGER" />
+    <result column="delete_user_id" property="deleteUserId" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="video_file" property="videoFile" jdbcType="VARCHAR" />
+    <result column="look_count" property="lookCount" jdbcType="INTEGER" />
+    <result column="is_enable" property="isEnable" jdbcType="INTEGER" />
+    <result column="title_prefix" property="titlePrefix" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="mtesth.api.forum.model.Topics" extends="BaseResultMap" >
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Blob_Column_List" >
+    content
+  </sql>
+  <insert id="insert" parameterType="mtesth.api.forum.model.Topics" >
+    insert into topics (id, title, praise_count, 
+      reply_count, circle_id, is_recommend, 
+      recommend_time, create_by, create_time, 
+      update_time, is_deleted, delete_user_id, 
+      type, video_file, look_count, 
+      is_enable, title_prefix, content
+      )
+    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{praiseCount,jdbcType=INTEGER}, 
+      #{replyCount,jdbcType=INTEGER}, #{circleId,jdbcType=INTEGER}, #{isRecommend,jdbcType=INTEGER}, 
+      #{recommendTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{isDeleted,jdbcType=INTEGER}, #{deleteUserId,jdbcType=INTEGER}, 
+      #{type,jdbcType=INTEGER}, #{videoFile,jdbcType=VARCHAR}, #{lookCount,jdbcType=INTEGER}, 
+      #{isEnable,jdbcType=INTEGER}, #{titlePrefix,jdbcType=VARCHAR}, #{content,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="mtesth.api.forum.model.Topics" >
+    insert into topics
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="praiseCount != null" >
+        praise_count,
+      </if>
+      <if test="replyCount != null" >
+        reply_count,
+      </if>
+      <if test="circleId != null" >
+        circle_id,
+      </if>
+      <if test="isRecommend != null" >
+        is_recommend,
+      </if>
+      <if test="recommendTime != null" >
+        recommend_time,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="isDeleted != null" >
+        is_deleted,
+      </if>
+      <if test="deleteUserId != null" >
+        delete_user_id,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="videoFile != null" >
+        video_file,
+      </if>
+      <if test="lookCount != null" >
+        look_count,
+      </if>
+      <if test="isEnable != null" >
+        is_enable,
+      </if>
+      <if test="titlePrefix != null" >
+        title_prefix,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="praiseCount != null" >
+        #{praiseCount,jdbcType=INTEGER},
+      </if>
+      <if test="replyCount != null" >
+        #{replyCount,jdbcType=INTEGER},
+      </if>
+      <if test="circleId != null" >
+        #{circleId,jdbcType=INTEGER},
+      </if>
+      <if test="isRecommend != null" >
+        #{isRecommend,jdbcType=INTEGER},
+      </if>
+      <if test="recommendTime != null" >
+        #{recommendTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDeleted != null" >
+        #{isDeleted,jdbcType=INTEGER},
+      </if>
+      <if test="deleteUserId != null" >
+        #{deleteUserId,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="videoFile != null" >
+        #{videoFile,jdbcType=VARCHAR},
+      </if>
+      <if test="lookCount != null" >
+        #{lookCount,jdbcType=INTEGER},
+      </if>
+      <if test="isEnable != null" >
+        #{isEnable,jdbcType=INTEGER},
+      </if>
+      <if test="titlePrefix != null" >
+        #{titlePrefix,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

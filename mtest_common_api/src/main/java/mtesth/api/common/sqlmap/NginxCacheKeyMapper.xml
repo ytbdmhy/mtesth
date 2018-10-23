@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.common.dao.NginxCacheKeyMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.common.model.NginxCacheKey" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="cache_type" property="cacheType" jdbcType="VARCHAR" />
+    <result column="cache_key" property="cacheKey" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="cache_site" property="cacheSite" jdbcType="VARCHAR" />
+    <result column="nginx_server" property="nginxServer" jdbcType="VARCHAR" />
+    <result column="type_value" property="typeValue" jdbcType="VARCHAR" />
+    <result column="codes" property="codes" jdbcType="VARCHAR" />
+    <result column="cache_param" property="cacheParam" jdbcType="VARCHAR" />
+    <result column="delete_flag" property="deleteFlag" jdbcType="INTEGER" />
+    <result column="clear_flag" property="clearFlag" jdbcType="INTEGER" />
+    <result column="refresh_flag" property="refreshFlag" jdbcType="INTEGER" />
+    <result column="file_path" property="filePath" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="mtesth.api.common.model.NginxCacheKey" >
+    insert into nginx_cache_key (id, name, cache_type, 
+      cache_key, create_time, cache_site, 
+      nginx_server, type_value, codes, 
+      cache_param, delete_flag, clear_flag, 
+      refresh_flag, file_path)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{cacheType,jdbcType=VARCHAR}, 
+      #{cacheKey,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{cacheSite,jdbcType=VARCHAR}, 
+      #{nginxServer,jdbcType=VARCHAR}, #{typeValue,jdbcType=VARCHAR}, #{codes,jdbcType=VARCHAR}, 
+      #{cacheParam,jdbcType=VARCHAR}, #{deleteFlag,jdbcType=INTEGER}, #{clearFlag,jdbcType=INTEGER}, 
+      #{refreshFlag,jdbcType=INTEGER}, #{filePath,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="mtesth.api.common.model.NginxCacheKey" >
+    insert into nginx_cache_key
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="cacheType != null" >
+        cache_type,
+      </if>
+      <if test="cacheKey != null" >
+        cache_key,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="cacheSite != null" >
+        cache_site,
+      </if>
+      <if test="nginxServer != null" >
+        nginx_server,
+      </if>
+      <if test="typeValue != null" >
+        type_value,
+      </if>
+      <if test="codes != null" >
+        codes,
+      </if>
+      <if test="cacheParam != null" >
+        cache_param,
+      </if>
+      <if test="deleteFlag != null" >
+        delete_flag,
+      </if>
+      <if test="clearFlag != null" >
+        clear_flag,
+      </if>
+      <if test="refreshFlag != null" >
+        refresh_flag,
+      </if>
+      <if test="filePath != null" >
+        file_path,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cacheType != null" >
+        #{cacheType,jdbcType=VARCHAR},
+      </if>
+      <if test="cacheKey != null" >
+        #{cacheKey,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cacheSite != null" >
+        #{cacheSite,jdbcType=VARCHAR},
+      </if>
+      <if test="nginxServer != null" >
+        #{nginxServer,jdbcType=VARCHAR},
+      </if>
+      <if test="typeValue != null" >
+        #{typeValue,jdbcType=VARCHAR},
+      </if>
+      <if test="codes != null" >
+        #{codes,jdbcType=VARCHAR},
+      </if>
+      <if test="cacheParam != null" >
+        #{cacheParam,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteFlag != null" >
+        #{deleteFlag,jdbcType=INTEGER},
+      </if>
+      <if test="clearFlag != null" >
+        #{clearFlag,jdbcType=INTEGER},
+      </if>
+      <if test="refreshFlag != null" >
+        #{refreshFlag,jdbcType=INTEGER},
+      </if>
+      <if test="filePath != null" >
+        #{filePath,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

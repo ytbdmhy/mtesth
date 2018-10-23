@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.content.dao.WarehousePackageCategoriesMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.content.model.WarehousePackageCategories" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="package_id" property="packageId" jdbcType="INTEGER" />
+    <result column="category_id" property="categoryId" jdbcType="INTEGER" />
+    <result column="ordering" property="ordering" jdbcType="INTEGER" />
+    <result column="category_flag" property="categoryFlag" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="mtesth.api.content.model.WarehousePackageCategories" >
+    insert into warehouse_package_categories (id, package_id, category_id, 
+      ordering, category_flag)
+    values (#{id,jdbcType=INTEGER}, #{packageId,jdbcType=INTEGER}, #{categoryId,jdbcType=INTEGER}, 
+      #{ordering,jdbcType=INTEGER}, #{categoryFlag,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="mtesth.api.content.model.WarehousePackageCategories" >
+    insert into warehouse_package_categories
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="packageId != null" >
+        package_id,
+      </if>
+      <if test="categoryId != null" >
+        category_id,
+      </if>
+      <if test="ordering != null" >
+        ordering,
+      </if>
+      <if test="categoryFlag != null" >
+        category_flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="packageId != null" >
+        #{packageId,jdbcType=INTEGER},
+      </if>
+      <if test="categoryId != null" >
+        #{categoryId,jdbcType=INTEGER},
+      </if>
+      <if test="ordering != null" >
+        #{ordering,jdbcType=INTEGER},
+      </if>
+      <if test="categoryFlag != null" >
+        #{categoryFlag,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

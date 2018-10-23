@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.content.dao.VideoCategoryRefMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.content.model.VideoCategoryRef" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="video_id" property="videoId" jdbcType="INTEGER" />
+    <result column="categroy_id" property="categroyId" jdbcType="INTEGER" />
+    <result column="categroy_pid" property="categroyPid" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <insert id="insert" parameterType="mtesth.api.content.model.VideoCategoryRef" >
+    insert into video_category_ref (id, video_id, categroy_id, 
+      categroy_pid, create_time)
+    values (#{id,jdbcType=INTEGER}, #{videoId,jdbcType=INTEGER}, #{categroyId,jdbcType=INTEGER}, 
+      #{categroyPid,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="mtesth.api.content.model.VideoCategoryRef" >
+    insert into video_category_ref
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="videoId != null" >
+        video_id,
+      </if>
+      <if test="categroyId != null" >
+        categroy_id,
+      </if>
+      <if test="categroyPid != null" >
+        categroy_pid,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="videoId != null" >
+        #{videoId,jdbcType=INTEGER},
+      </if>
+      <if test="categroyId != null" >
+        #{categroyId,jdbcType=INTEGER},
+      </if>
+      <if test="categroyPid != null" >
+        #{categroyPid,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.common.dao.PlaceAdvMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.common.model.PlaceAdv" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="place_id" property="placeId" jdbcType="INTEGER" />
+    <result column="adv_id" property="advId" jdbcType="INTEGER" />
+    <result column="display_order" property="displayOrder" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="release_datetime" property="releaseDatetime" jdbcType="TIMESTAMP" />
+    <result column="expiry_datetime" property="expiryDatetime" jdbcType="TIMESTAMP" />
+    <result column="create_datetime" property="createDatetime" jdbcType="TIMESTAMP" />
+    <result column="create_by" property="createBy" jdbcType="INTEGER" />
+    <result column="update_datetime" property="updateDatetime" jdbcType="TIMESTAMP" />
+    <result column="update_by" property="updateBy" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insert" parameterType="mtesth.api.common.model.PlaceAdv" >
+    insert into place_adv (id, place_id, adv_id, 
+      display_order, status, release_datetime, 
+      expiry_datetime, create_datetime, create_by, 
+      update_datetime, update_by)
+    values (#{id,jdbcType=INTEGER}, #{placeId,jdbcType=INTEGER}, #{advId,jdbcType=INTEGER}, 
+      #{displayOrder,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}, #{releaseDatetime,jdbcType=TIMESTAMP}, 
+      #{expiryDatetime,jdbcType=TIMESTAMP}, #{createDatetime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=INTEGER}, 
+      #{updateDatetime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="mtesth.api.common.model.PlaceAdv" >
+    insert into place_adv
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="placeId != null" >
+        place_id,
+      </if>
+      <if test="advId != null" >
+        adv_id,
+      </if>
+      <if test="displayOrder != null" >
+        display_order,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="releaseDatetime != null" >
+        release_datetime,
+      </if>
+      <if test="expiryDatetime != null" >
+        expiry_datetime,
+      </if>
+      <if test="createDatetime != null" >
+        create_datetime,
+      </if>
+      <if test="createBy != null" >
+        create_by,
+      </if>
+      <if test="updateDatetime != null" >
+        update_datetime,
+      </if>
+      <if test="updateBy != null" >
+        update_by,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="placeId != null" >
+        #{placeId,jdbcType=INTEGER},
+      </if>
+      <if test="advId != null" >
+        #{advId,jdbcType=INTEGER},
+      </if>
+      <if test="displayOrder != null" >
+        #{displayOrder,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="releaseDatetime != null" >
+        #{releaseDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expiryDatetime != null" >
+        #{expiryDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createDatetime != null" >
+        #{createDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=INTEGER},
+      </if>
+      <if test="updateDatetime != null" >
+        #{updateDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

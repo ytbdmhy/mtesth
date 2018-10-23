@@ -23,18 +23,18 @@
         </javaTypeResolver>
 
         <!-- 生成实体类 指定包名 以及生成的地址（可以自定义地址，但是路径不存在不会自动创建 使用maven生成在target目录下，会自动创建） -->
-        <javaModelGenerator targetPackage="model" targetProject="C:\Users\Administrator\Desktop\mtesth\mtest_common_api\src\main\java\mtesth\api\common">
+        <javaModelGenerator targetPackage="mtesth.api.common.model" targetProject="C:\Users\Administrator\Desktop\mtesth\mtest_common_api\src\main\java">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
 
         <!-- 生成SQLMAP文件 -->
-        <sqlMapGenerator targetPackage="sqlmap" targetProject="C:\Users\Administrator\Desktop\mtesth\mtest_common_api\src\main\java\mtesth\api\common">
+        <sqlMapGenerator targetPackage="mtesth.api.common.sqlmap" targetProject="C:\Users\Administrator\Desktop\mtesth\mtest_common_api\src\main\java">
             <property name="enableSubPackages" value="false" />
         </sqlMapGenerator>
 
         <!-- 生成DAO文件 可以配置 type="XMLMAPPER"生成xml的dao实现 content id="DB2Tables" 修改targetRuntime="MyBatis3" -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="dao" targetProject="C:\Users\Administrator\Desktop\mtesth\mtest_common_api\src\main\java\mtesth\api\common">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="mtesth.api.common.dao" targetProject="C:\Users\Administrator\Desktop\mtesth\mtest_common_api\src\main\java">
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
 

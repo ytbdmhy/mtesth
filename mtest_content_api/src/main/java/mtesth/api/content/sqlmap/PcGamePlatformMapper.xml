@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.content.dao.PcGamePlatformMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.content.model.PcGamePlatform" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="platform_name" property="platformName" jdbcType="VARCHAR" />
+    <result column="platform_alias" property="platformAlias" jdbcType="VARCHAR" />
+    <result column="delete_flag" property="deleteFlag" jdbcType="INTEGER" />
+    <result column="create_datetime" property="createDatetime" jdbcType="TIMESTAMP" />
+    <result column="update_datetime" property="updateDatetime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <insert id="insert" parameterType="mtesth.api.content.model.PcGamePlatform" >
+    insert into pc_game_platform (id, platform_name, platform_alias, 
+      delete_flag, create_datetime, update_datetime
+      )
+    values (#{id,jdbcType=INTEGER}, #{platformName,jdbcType=VARCHAR}, #{platformAlias,jdbcType=VARCHAR}, 
+      #{deleteFlag,jdbcType=INTEGER}, #{createDatetime,jdbcType=TIMESTAMP}, #{updateDatetime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="mtesth.api.content.model.PcGamePlatform" >
+    insert into pc_game_platform
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="platformName != null" >
+        platform_name,
+      </if>
+      <if test="platformAlias != null" >
+        platform_alias,
+      </if>
+      <if test="deleteFlag != null" >
+        delete_flag,
+      </if>
+      <if test="createDatetime != null" >
+        create_datetime,
+      </if>
+      <if test="updateDatetime != null" >
+        update_datetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="platformName != null" >
+        #{platformName,jdbcType=VARCHAR},
+      </if>
+      <if test="platformAlias != null" >
+        #{platformAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="deleteFlag != null" >
+        #{deleteFlag,jdbcType=INTEGER},
+      </if>
+      <if test="createDatetime != null" >
+        #{createDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDatetime != null" >
+        #{updateDatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

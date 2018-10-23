@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.content.dao.CommonResourceMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.content.model.CommonResource" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="site_id" property="siteId" jdbcType="INTEGER" />
+    <result column="content_type_id" property="contentTypeId" jdbcType="INTEGER" />
+    <result column="object_pk" property="objectPk" jdbcType="INTEGER" />
+    <result column="kind" property="kind" jdbcType="VARCHAR" />
+    <result column="alias" property="alias" jdbcType="VARCHAR" />
+    <result column="alt" property="alt" jdbcType="VARCHAR" />
+    <result column="file" property="file" jdbcType="VARCHAR" />
+    <result column="mime_type" property="mimeType" jdbcType="VARCHAR" />
+    <result column="file_md5" property="fileMd5" jdbcType="VARCHAR" />
+    <result column="file_size" property="fileSize" jdbcType="INTEGER" />
+    <result column="width" property="width" jdbcType="VARCHAR" />
+    <result column="height" property="height" jdbcType="VARCHAR" />
+    <result column="ref_id" property="refId" jdbcType="INTEGER" />
+    <result column="resized_flag" property="resizedFlag" jdbcType="TINYINT" />
+  </resultMap>
+  <insert id="insert" parameterType="mtesth.api.content.model.CommonResource" >
+    insert into common_resource (id, site_id, content_type_id, 
+      object_pk, kind, alias, 
+      alt, file, mime_type, 
+      file_md5, file_size, width, 
+      height, ref_id, resized_flag
+      )
+    values (#{id,jdbcType=INTEGER}, #{siteId,jdbcType=INTEGER}, #{contentTypeId,jdbcType=INTEGER}, 
+      #{objectPk,jdbcType=INTEGER}, #{kind,jdbcType=VARCHAR}, #{alias,jdbcType=VARCHAR}, 
+      #{alt,jdbcType=VARCHAR}, #{file,jdbcType=VARCHAR}, #{mimeType,jdbcType=VARCHAR}, 
+      #{fileMd5,jdbcType=VARCHAR}, #{fileSize,jdbcType=INTEGER}, #{width,jdbcType=VARCHAR}, 
+      #{height,jdbcType=VARCHAR}, #{refId,jdbcType=INTEGER}, #{resizedFlag,jdbcType=TINYINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="mtesth.api.content.model.CommonResource" >
+    insert into common_resource
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="siteId != null" >
+        site_id,
+      </if>
+      <if test="contentTypeId != null" >
+        content_type_id,
+      </if>
+      <if test="objectPk != null" >
+        object_pk,
+      </if>
+      <if test="kind != null" >
+        kind,
+      </if>
+      <if test="alias != null" >
+        alias,
+      </if>
+      <if test="alt != null" >
+        alt,
+      </if>
+      <if test="file != null" >
+        file,
+      </if>
+      <if test="mimeType != null" >
+        mime_type,
+      </if>
+      <if test="fileMd5 != null" >
+        file_md5,
+      </if>
+      <if test="fileSize != null" >
+        file_size,
+      </if>
+      <if test="width != null" >
+        width,
+      </if>
+      <if test="height != null" >
+        height,
+      </if>
+      <if test="refId != null" >
+        ref_id,
+      </if>
+      <if test="resizedFlag != null" >
+        resized_flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="siteId != null" >
+        #{siteId,jdbcType=INTEGER},
+      </if>
+      <if test="contentTypeId != null" >
+        #{contentTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="objectPk != null" >
+        #{objectPk,jdbcType=INTEGER},
+      </if>
+      <if test="kind != null" >
+        #{kind,jdbcType=VARCHAR},
+      </if>
+      <if test="alias != null" >
+        #{alias,jdbcType=VARCHAR},
+      </if>
+      <if test="alt != null" >
+        #{alt,jdbcType=VARCHAR},
+      </if>
+      <if test="file != null" >
+        #{file,jdbcType=VARCHAR},
+      </if>
+      <if test="mimeType != null" >
+        #{mimeType,jdbcType=VARCHAR},
+      </if>
+      <if test="fileMd5 != null" >
+        #{fileMd5,jdbcType=VARCHAR},
+      </if>
+      <if test="fileSize != null" >
+        #{fileSize,jdbcType=INTEGER},
+      </if>
+      <if test="width != null" >
+        #{width,jdbcType=VARCHAR},
+      </if>
+      <if test="height != null" >
+        #{height,jdbcType=VARCHAR},
+      </if>
+      <if test="refId != null" >
+        #{refId,jdbcType=INTEGER},
+      </if>
+      <if test="resizedFlag != null" >
+        #{resizedFlag,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

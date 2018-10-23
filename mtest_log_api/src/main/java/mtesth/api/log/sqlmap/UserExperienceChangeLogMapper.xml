@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.log.dao.UserExperienceChangeLogMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.log.model.UserExperienceChangeLog" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="platform" property="platform" jdbcType="VARCHAR" />
+    <result column="action_type" property="actionType" jdbcType="VARCHAR" />
+    <result column="action_name" property="actionName" jdbcType="VARCHAR" />
+    <result column="action_title" property="actionTitle" jdbcType="VARCHAR" />
+    <result column="experience" property="experience" jdbcType="INTEGER" />
+    <result column="before_experience" property="beforeExperience" jdbcType="INTEGER" />
+    <result column="after_experience" property="afterExperience" jdbcType="INTEGER" />
+    <result column="user_agent" property="userAgent" jdbcType="VARCHAR" />
+    <result column="ip" property="ip" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <insert id="insert" parameterType="mtesth.api.log.model.UserExperienceChangeLog" >
+    insert into user_experience_change_log (id, user_id, user_name, 
+      platform, action_type, action_name, 
+      action_title, experience, before_experience, 
+      after_experience, user_agent, ip, 
+      create_time)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, 
+      #{platform,jdbcType=VARCHAR}, #{actionType,jdbcType=VARCHAR}, #{actionName,jdbcType=VARCHAR}, 
+      #{actionTitle,jdbcType=VARCHAR}, #{experience,jdbcType=INTEGER}, #{beforeExperience,jdbcType=INTEGER}, 
+      #{afterExperience,jdbcType=INTEGER}, #{userAgent,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="mtesth.api.log.model.UserExperienceChangeLog" >
+    insert into user_experience_change_log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="userName != null" >
+        user_name,
+      </if>
+      <if test="platform != null" >
+        platform,
+      </if>
+      <if test="actionType != null" >
+        action_type,
+      </if>
+      <if test="actionName != null" >
+        action_name,
+      </if>
+      <if test="actionTitle != null" >
+        action_title,
+      </if>
+      <if test="experience != null" >
+        experience,
+      </if>
+      <if test="beforeExperience != null" >
+        before_experience,
+      </if>
+      <if test="afterExperience != null" >
+        after_experience,
+      </if>
+      <if test="userAgent != null" >
+        user_agent,
+      </if>
+      <if test="ip != null" >
+        ip,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="platform != null" >
+        #{platform,jdbcType=VARCHAR},
+      </if>
+      <if test="actionType != null" >
+        #{actionType,jdbcType=VARCHAR},
+      </if>
+      <if test="actionName != null" >
+        #{actionName,jdbcType=VARCHAR},
+      </if>
+      <if test="actionTitle != null" >
+        #{actionTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="experience != null" >
+        #{experience,jdbcType=INTEGER},
+      </if>
+      <if test="beforeExperience != null" >
+        #{beforeExperience,jdbcType=INTEGER},
+      </if>
+      <if test="afterExperience != null" >
+        #{afterExperience,jdbcType=INTEGER},
+      </if>
+      <if test="userAgent != null" >
+        #{userAgent,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null" >
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>

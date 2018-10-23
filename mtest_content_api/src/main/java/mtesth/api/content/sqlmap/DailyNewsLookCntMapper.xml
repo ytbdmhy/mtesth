@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.content.dao.DailyNewsLookCntMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.content.model.DailyNewsLookCnt" >
+    <result column="news_id" property="newsId" jdbcType="INTEGER" />
+    <result column="news_content_type" property="newsContentType" jdbcType="VARCHAR" />
+    <result column="create_date" property="createDate" jdbcType="DATE" />
+    <result column="look_cnt" property="lookCnt" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insert" parameterType="mtesth.api.content.model.DailyNewsLookCnt" >
+    insert into daily_news_look_cnt (news_id, news_content_type, create_date, 
+      look_cnt)
+    values (#{newsId,jdbcType=INTEGER}, #{newsContentType,jdbcType=VARCHAR}, #{createDate,jdbcType=DATE}, 
+      #{lookCnt,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="mtesth.api.content.model.DailyNewsLookCnt" >
+    insert into daily_news_look_cnt
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="newsId != null" >
+        news_id,
+      </if>
+      <if test="newsContentType != null" >
+        news_content_type,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="lookCnt != null" >
+        look_cnt,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="newsId != null" >
+        #{newsId,jdbcType=INTEGER},
+      </if>
+      <if test="newsContentType != null" >
+        #{newsContentType,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=DATE},
+      </if>
+      <if test="lookCnt != null" >
+        #{lookCnt,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

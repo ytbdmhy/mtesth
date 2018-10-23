@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.common.dao.ClientappClientpackageversionMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.common.model.ClientappClientpackageversion" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="icon" property="icon" jdbcType="VARCHAR" />
+    <result column="cover" property="cover" jdbcType="VARCHAR" />
+    <result column="package_name" property="packageName" jdbcType="VARCHAR" />
+    <result column="download" property="download" jdbcType="VARCHAR" />
+    <result column="download_size" property="downloadSize" jdbcType="INTEGER" />
+    <result column="download_count" property="downloadCount" jdbcType="INTEGER" />
+    <result column="version_name" property="versionName" jdbcType="VARCHAR" />
+    <result column="version_code" property="versionCode" jdbcType="INTEGER" />
+    <result column="summary" property="summary" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="released_datetime" property="releasedDatetime" jdbcType="TIMESTAMP" />
+    <result column="created_datetime" property="createdDatetime" jdbcType="TIMESTAMP" />
+    <result column="updated_datetime" property="updatedDatetime" jdbcType="TIMESTAMP" />
+    <result column="site_id" property="siteId" jdbcType="INTEGER" />
+    <result column="resources_count" property="resourcesCount" jdbcType="INTEGER" />
+    <result column="workspace" property="workspace" jdbcType="VARCHAR" />
+    <result column="must_update_flag" property="mustUpdateFlag" jdbcType="INTEGER" />
+    <result column="client_cpu_architecture" property="clientCpuArchitecture" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="mtesth.api.common.model.ClientappClientpackageversionWithBLOBs" extends="BaseResultMap" >
+    <result column="memorandum" property="memorandum" jdbcType="LONGVARCHAR" />
+    <result column="whatsnew" property="whatsnew" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Blob_Column_List" >
+    memorandum, whatsnew
+  </sql>
+  <insert id="insert" parameterType="mtesth.api.common.model.ClientappClientpackageversionWithBLOBs" >
+    insert into clientapp_clientpackageversion (id, icon, cover, 
+      package_name, download, download_size, 
+      download_count, version_name, version_code, 
+      summary, status, released_datetime, 
+      created_datetime, updated_datetime, site_id, 
+      resources_count, workspace, must_update_flag, 
+      client_cpu_architecture, memorandum, 
+      whatsnew)
+    values (#{id,jdbcType=INTEGER}, #{icon,jdbcType=VARCHAR}, #{cover,jdbcType=VARCHAR}, 
+      #{packageName,jdbcType=VARCHAR}, #{download,jdbcType=VARCHAR}, #{downloadSize,jdbcType=INTEGER}, 
+      #{downloadCount,jdbcType=INTEGER}, #{versionName,jdbcType=VARCHAR}, #{versionCode,jdbcType=INTEGER}, 
+      #{summary,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{releasedDatetime,jdbcType=TIMESTAMP}, 
+      #{createdDatetime,jdbcType=TIMESTAMP}, #{updatedDatetime,jdbcType=TIMESTAMP}, #{siteId,jdbcType=INTEGER}, 
+      #{resourcesCount,jdbcType=INTEGER}, #{workspace,jdbcType=VARCHAR}, #{mustUpdateFlag,jdbcType=INTEGER}, 
+      #{clientCpuArchitecture,jdbcType=VARCHAR}, #{memorandum,jdbcType=LONGVARCHAR}, 
+      #{whatsnew,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="mtesth.api.common.model.ClientappClientpackageversionWithBLOBs" >
+    insert into clientapp_clientpackageversion
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="icon != null" >
+        icon,
+      </if>
+      <if test="cover != null" >
+        cover,
+      </if>
+      <if test="packageName != null" >
+        package_name,
+      </if>
+      <if test="download != null" >
+        download,
+      </if>
+      <if test="downloadSize != null" >
+        download_size,
+      </if>
+      <if test="downloadCount != null" >
+        download_count,
+      </if>
+      <if test="versionName != null" >
+        version_name,
+      </if>
+      <if test="versionCode != null" >
+        version_code,
+      </if>
+      <if test="summary != null" >
+        summary,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="releasedDatetime != null" >
+        released_datetime,
+      </if>
+      <if test="createdDatetime != null" >
+        created_datetime,
+      </if>
+      <if test="updatedDatetime != null" >
+        updated_datetime,
+      </if>
+      <if test="siteId != null" >
+        site_id,
+      </if>
+      <if test="resourcesCount != null" >
+        resources_count,
+      </if>
+      <if test="workspace != null" >
+        workspace,
+      </if>
+      <if test="mustUpdateFlag != null" >
+        must_update_flag,
+      </if>
+      <if test="clientCpuArchitecture != null" >
+        client_cpu_architecture,
+      </if>
+      <if test="memorandum != null" >
+        memorandum,
+      </if>
+      <if test="whatsnew != null" >
+        whatsnew,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="icon != null" >
+        #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="cover != null" >
+        #{cover,jdbcType=VARCHAR},
+      </if>
+      <if test="packageName != null" >
+        #{packageName,jdbcType=VARCHAR},
+      </if>
+      <if test="download != null" >
+        #{download,jdbcType=VARCHAR},
+      </if>
+      <if test="downloadSize != null" >
+        #{downloadSize,jdbcType=INTEGER},
+      </if>
+      <if test="downloadCount != null" >
+        #{downloadCount,jdbcType=INTEGER},
+      </if>
+      <if test="versionName != null" >
+        #{versionName,jdbcType=VARCHAR},
+      </if>
+      <if test="versionCode != null" >
+        #{versionCode,jdbcType=INTEGER},
+      </if>
+      <if test="summary != null" >
+        #{summary,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="releasedDatetime != null" >
+        #{releasedDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createdDatetime != null" >
+        #{createdDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedDatetime != null" >
+        #{updatedDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="siteId != null" >
+        #{siteId,jdbcType=INTEGER},
+      </if>
+      <if test="resourcesCount != null" >
+        #{resourcesCount,jdbcType=INTEGER},
+      </if>
+      <if test="workspace != null" >
+        #{workspace,jdbcType=VARCHAR},
+      </if>
+      <if test="mustUpdateFlag != null" >
+        #{mustUpdateFlag,jdbcType=INTEGER},
+      </if>
+      <if test="clientCpuArchitecture != null" >
+        #{clientCpuArchitecture,jdbcType=VARCHAR},
+      </if>
+      <if test="memorandum != null" >
+        #{memorandum,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="whatsnew != null" >
+        #{whatsnew,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

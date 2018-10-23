@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.log.dao.PackageAndroidDownloadLogMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.log.model.PackageAndroidDownloadLog" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="package_id" property="packageId" jdbcType="INTEGER" />
+    <result column="package_name" property="packageName" jdbcType="VARCHAR" />
+    <result column="package_title" property="packageTitle" jdbcType="VARCHAR" />
+    <result column="root_category_id" property="rootCategoryId" jdbcType="INTEGER" />
+    <result column="root_category_slug" property="rootCategorySlug" jdbcType="VARCHAR" />
+    <result column="root_catagory_name" property="rootCatagoryName" jdbcType="VARCHAR" />
+    <result column="stars_average" property="starsAverage" jdbcType="INTEGER" />
+    <result column="download_url" property="downloadUrl" jdbcType="VARCHAR" />
+    <result column="standard_catagory_id" property="standardCatagoryId" jdbcType="INTEGER" />
+    <result column="standard_catagory_names" property="standardCatagoryNames" jdbcType="VARCHAR" />
+    <result column="version_id" property="versionId" jdbcType="INTEGER" />
+    <result column="version_name" property="versionName" jdbcType="VARCHAR" />
+    <result column="version_code" property="versionCode" jdbcType="INTEGER" />
+    <result column="platform_type" property="platformType" jdbcType="VARCHAR" />
+    <result column="icon" property="icon" jdbcType="VARCHAR" />
+    <result column="source_site_id" property="sourceSiteId" jdbcType="INTEGER" />
+    <result column="source_platform_code" property="sourcePlatformCode" jdbcType="VARCHAR" />
+    <result column="source_function_code" property="sourceFunctionCode" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="ip" property="ip" jdbcType="VARCHAR" />
+    <result column="user_agent" property="userAgent" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="mtesth.api.log.model.PackageAndroidDownloadLog" >
+    insert into package_android_download_log (id, package_id, package_name, 
+      package_title, root_category_id, root_category_slug, 
+      root_catagory_name, stars_average, download_url, 
+      standard_catagory_id, standard_catagory_names, 
+      version_id, version_name, version_code, 
+      platform_type, icon, source_site_id, 
+      source_platform_code, source_function_code, 
+      create_time, ip, user_agent
+      )
+    values (#{id,jdbcType=INTEGER}, #{packageId,jdbcType=INTEGER}, #{packageName,jdbcType=VARCHAR}, 
+      #{packageTitle,jdbcType=VARCHAR}, #{rootCategoryId,jdbcType=INTEGER}, #{rootCategorySlug,jdbcType=VARCHAR}, 
+      #{rootCatagoryName,jdbcType=VARCHAR}, #{starsAverage,jdbcType=INTEGER}, #{downloadUrl,jdbcType=VARCHAR}, 
+      #{standardCatagoryId,jdbcType=INTEGER}, #{standardCatagoryNames,jdbcType=VARCHAR}, 
+      #{versionId,jdbcType=INTEGER}, #{versionName,jdbcType=VARCHAR}, #{versionCode,jdbcType=INTEGER}, 
+      #{platformType,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR}, #{sourceSiteId,jdbcType=INTEGER}, 
+      #{sourcePlatformCode,jdbcType=VARCHAR}, #{sourceFunctionCode,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{ip,jdbcType=VARCHAR}, #{userAgent,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="mtesth.api.log.model.PackageAndroidDownloadLog" >
+    insert into package_android_download_log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="packageId != null" >
+        package_id,
+      </if>
+      <if test="packageName != null" >
+        package_name,
+      </if>
+      <if test="packageTitle != null" >
+        package_title,
+      </if>
+      <if test="rootCategoryId != null" >
+        root_category_id,
+      </if>
+      <if test="rootCategorySlug != null" >
+        root_category_slug,
+      </if>
+      <if test="rootCatagoryName != null" >
+        root_catagory_name,
+      </if>
+      <if test="starsAverage != null" >
+        stars_average,
+      </if>
+      <if test="downloadUrl != null" >
+        download_url,
+      </if>
+      <if test="standardCatagoryId != null" >
+        standard_catagory_id,
+      </if>
+      <if test="standardCatagoryNames != null" >
+        standard_catagory_names,
+      </if>
+      <if test="versionId != null" >
+        version_id,
+      </if>
+      <if test="versionName != null" >
+        version_name,
+      </if>
+      <if test="versionCode != null" >
+        version_code,
+      </if>
+      <if test="platformType != null" >
+        platform_type,
+      </if>
+      <if test="icon != null" >
+        icon,
+      </if>
+      <if test="sourceSiteId != null" >
+        source_site_id,
+      </if>
+      <if test="sourcePlatformCode != null" >
+        source_platform_code,
+      </if>
+      <if test="sourceFunctionCode != null" >
+        source_function_code,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="ip != null" >
+        ip,
+      </if>
+      <if test="userAgent != null" >
+        user_agent,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="packageId != null" >
+        #{packageId,jdbcType=INTEGER},
+      </if>
+      <if test="packageName != null" >
+        #{packageName,jdbcType=VARCHAR},
+      </if>
+      <if test="packageTitle != null" >
+        #{packageTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="rootCategoryId != null" >
+        #{rootCategoryId,jdbcType=INTEGER},
+      </if>
+      <if test="rootCategorySlug != null" >
+        #{rootCategorySlug,jdbcType=VARCHAR},
+      </if>
+      <if test="rootCatagoryName != null" >
+        #{rootCatagoryName,jdbcType=VARCHAR},
+      </if>
+      <if test="starsAverage != null" >
+        #{starsAverage,jdbcType=INTEGER},
+      </if>
+      <if test="downloadUrl != null" >
+        #{downloadUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="standardCatagoryId != null" >
+        #{standardCatagoryId,jdbcType=INTEGER},
+      </if>
+      <if test="standardCatagoryNames != null" >
+        #{standardCatagoryNames,jdbcType=VARCHAR},
+      </if>
+      <if test="versionId != null" >
+        #{versionId,jdbcType=INTEGER},
+      </if>
+      <if test="versionName != null" >
+        #{versionName,jdbcType=VARCHAR},
+      </if>
+      <if test="versionCode != null" >
+        #{versionCode,jdbcType=INTEGER},
+      </if>
+      <if test="platformType != null" >
+        #{platformType,jdbcType=VARCHAR},
+      </if>
+      <if test="icon != null" >
+        #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="sourceSiteId != null" >
+        #{sourceSiteId,jdbcType=INTEGER},
+      </if>
+      <if test="sourcePlatformCode != null" >
+        #{sourcePlatformCode,jdbcType=VARCHAR},
+      </if>
+      <if test="sourceFunctionCode != null" >
+        #{sourceFunctionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ip != null" >
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="userAgent != null" >
+        #{userAgent,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

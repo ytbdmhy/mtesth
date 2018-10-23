@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.forum.dao.ReplyToMeMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.forum.model.ReplyToMe" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="reply_from" property="replyFrom" jdbcType="INTEGER" />
+    <result column="reply_to" property="replyTo" jdbcType="INTEGER" />
+    <result column="reply_type" property="replyType" jdbcType="INTEGER" />
+    <result column="topic_id" property="topicId" jdbcType="INTEGER" />
+    <result column="reply_id" property="replyId" jdbcType="INTEGER" />
+    <result column="reply_of_reply_id" property="replyOfReplyId" jdbcType="INTEGER" />
+    <result column="look_time" property="lookTime" jdbcType="TIMESTAMP" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="is_delete" property="isDelete" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insert" parameterType="mtesth.api.forum.model.ReplyToMe" >
+    insert into reply_to_me (id, reply_from, reply_to, 
+      reply_type, topic_id, reply_id, 
+      reply_of_reply_id, look_time, create_time, 
+      is_delete)
+    values (#{id,jdbcType=INTEGER}, #{replyFrom,jdbcType=INTEGER}, #{replyTo,jdbcType=INTEGER}, 
+      #{replyType,jdbcType=INTEGER}, #{topicId,jdbcType=INTEGER}, #{replyId,jdbcType=INTEGER}, 
+      #{replyOfReplyId,jdbcType=INTEGER}, #{lookTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{isDelete,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="mtesth.api.forum.model.ReplyToMe" >
+    insert into reply_to_me
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="replyFrom != null" >
+        reply_from,
+      </if>
+      <if test="replyTo != null" >
+        reply_to,
+      </if>
+      <if test="replyType != null" >
+        reply_type,
+      </if>
+      <if test="topicId != null" >
+        topic_id,
+      </if>
+      <if test="replyId != null" >
+        reply_id,
+      </if>
+      <if test="replyOfReplyId != null" >
+        reply_of_reply_id,
+      </if>
+      <if test="lookTime != null" >
+        look_time,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="isDelete != null" >
+        is_delete,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="replyFrom != null" >
+        #{replyFrom,jdbcType=INTEGER},
+      </if>
+      <if test="replyTo != null" >
+        #{replyTo,jdbcType=INTEGER},
+      </if>
+      <if test="replyType != null" >
+        #{replyType,jdbcType=INTEGER},
+      </if>
+      <if test="topicId != null" >
+        #{topicId,jdbcType=INTEGER},
+      </if>
+      <if test="replyId != null" >
+        #{replyId,jdbcType=INTEGER},
+      </if>
+      <if test="replyOfReplyId != null" >
+        #{replyOfReplyId,jdbcType=INTEGER},
+      </if>
+      <if test="lookTime != null" >
+        #{lookTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDelete != null" >
+        #{isDelete,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

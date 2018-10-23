@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.forum.dao.SocialCircleMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.forum.model.SocialCircle" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="summary" property="summary" jdbcType="VARCHAR" />
+    <result column="cover" property="cover" jdbcType="VARCHAR" />
+    <result column="order_no" property="orderNo" jdbcType="INTEGER" />
+    <result column="is_recommend" property="isRecommend" jdbcType="INTEGER" />
+    <result column="topic_count" property="topicCount" jdbcType="INTEGER" />
+    <result column="today_topic_count" property="todayTopicCount" jdbcType="INTEGER" />
+    <result column="is_enable" property="isEnable" jdbcType="INTEGER" />
+    <result column="is_delete" property="isDelete" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="title_prefix" property="titlePrefix" jdbcType="VARCHAR" />
+    <result column="backend_title_prefix" property="backendTitlePrefix" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="mtesth.api.forum.model.SocialCircle" >
+    insert into social_circle (id, name, summary, 
+      cover, order_no, is_recommend, 
+      topic_count, today_topic_count, is_enable, 
+      is_delete, create_time, update_time, 
+      title_prefix, backend_title_prefix)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{summary,jdbcType=VARCHAR}, 
+      #{cover,jdbcType=VARCHAR}, #{orderNo,jdbcType=INTEGER}, #{isRecommend,jdbcType=INTEGER}, 
+      #{topicCount,jdbcType=INTEGER}, #{todayTopicCount,jdbcType=INTEGER}, #{isEnable,jdbcType=INTEGER}, 
+      #{isDelete,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{titlePrefix,jdbcType=VARCHAR}, #{backendTitlePrefix,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="mtesth.api.forum.model.SocialCircle" >
+    insert into social_circle
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="summary != null" >
+        summary,
+      </if>
+      <if test="cover != null" >
+        cover,
+      </if>
+      <if test="orderNo != null" >
+        order_no,
+      </if>
+      <if test="isRecommend != null" >
+        is_recommend,
+      </if>
+      <if test="topicCount != null" >
+        topic_count,
+      </if>
+      <if test="todayTopicCount != null" >
+        today_topic_count,
+      </if>
+      <if test="isEnable != null" >
+        is_enable,
+      </if>
+      <if test="isDelete != null" >
+        is_delete,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="titlePrefix != null" >
+        title_prefix,
+      </if>
+      <if test="backendTitlePrefix != null" >
+        backend_title_prefix,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="summary != null" >
+        #{summary,jdbcType=VARCHAR},
+      </if>
+      <if test="cover != null" >
+        #{cover,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNo != null" >
+        #{orderNo,jdbcType=INTEGER},
+      </if>
+      <if test="isRecommend != null" >
+        #{isRecommend,jdbcType=INTEGER},
+      </if>
+      <if test="topicCount != null" >
+        #{topicCount,jdbcType=INTEGER},
+      </if>
+      <if test="todayTopicCount != null" >
+        #{todayTopicCount,jdbcType=INTEGER},
+      </if>
+      <if test="isEnable != null" >
+        #{isEnable,jdbcType=INTEGER},
+      </if>
+      <if test="isDelete != null" >
+        #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="titlePrefix != null" >
+        #{titlePrefix,jdbcType=VARCHAR},
+      </if>
+      <if test="backendTitlePrefix != null" >
+        #{backendTitlePrefix,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

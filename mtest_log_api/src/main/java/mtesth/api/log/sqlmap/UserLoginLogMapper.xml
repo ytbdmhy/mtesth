@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.log.dao.UserLoginLogMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.log.model.UserLoginLog" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_token" property="userToken" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="login_date" property="loginDate" jdbcType="DATE" />
+    <result column="login_datetime" property="loginDatetime" jdbcType="TIMESTAMP" />
+    <result column="login_ip" property="loginIp" jdbcType="VARCHAR" />
+    <result column="login_device_no" property="loginDeviceNo" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="mtesth.api.log.model.UserLoginLog" >
+    insert into user_login_log (id, user_token, user_id, 
+      login_date, login_datetime, login_ip, 
+      login_device_no)
+    values (#{id,jdbcType=INTEGER}, #{userToken,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER}, 
+      #{loginDate,jdbcType=DATE}, #{loginDatetime,jdbcType=TIMESTAMP}, #{loginIp,jdbcType=VARCHAR}, 
+      #{loginDeviceNo,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="mtesth.api.log.model.UserLoginLog" >
+    insert into user_login_log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userToken != null" >
+        user_token,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="loginDate != null" >
+        login_date,
+      </if>
+      <if test="loginDatetime != null" >
+        login_datetime,
+      </if>
+      <if test="loginIp != null" >
+        login_ip,
+      </if>
+      <if test="loginDeviceNo != null" >
+        login_device_no,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userToken != null" >
+        #{userToken,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="loginDate != null" >
+        #{loginDate,jdbcType=DATE},
+      </if>
+      <if test="loginDatetime != null" >
+        #{loginDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loginIp != null" >
+        #{loginIp,jdbcType=VARCHAR},
+      </if>
+      <if test="loginDeviceNo != null" >
+        #{loginDeviceNo,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

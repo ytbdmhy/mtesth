@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mtesth.api.content.dao.ExtendParamSortMapper" >
+  <resultMap id="BaseResultMap" type="mtesth.api.content.model.ExtendParamSort" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="param_sort" property="paramSort" jdbcType="VARCHAR" />
+    <result column="param_name" property="paramName" jdbcType="VARCHAR" />
+    <result column="param_type_enum" property="paramTypeEnum" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="is_delete" property="isDelete" jdbcType="INTEGER" />
+    <result column="create_datetime" property="createDatetime" jdbcType="TIMESTAMP" />
+    <result column="update_datetime" property="updateDatetime" jdbcType="TIMESTAMP" />
+    <result column="ordering" property="ordering" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insert" parameterType="mtesth.api.content.model.ExtendParamSort" >
+    insert into extend_param_sort (id, param_sort, param_name, 
+      param_type_enum, status, is_delete, 
+      create_datetime, update_datetime, ordering
+      )
+    values (#{id,jdbcType=INTEGER}, #{paramSort,jdbcType=VARCHAR}, #{paramName,jdbcType=VARCHAR}, 
+      #{paramTypeEnum,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{isDelete,jdbcType=INTEGER}, 
+      #{createDatetime,jdbcType=TIMESTAMP}, #{updateDatetime,jdbcType=TIMESTAMP}, #{ordering,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="mtesth.api.content.model.ExtendParamSort" >
+    insert into extend_param_sort
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="paramSort != null" >
+        param_sort,
+      </if>
+      <if test="paramName != null" >
+        param_name,
+      </if>
+      <if test="paramTypeEnum != null" >
+        param_type_enum,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="isDelete != null" >
+        is_delete,
+      </if>
+      <if test="createDatetime != null" >
+        create_datetime,
+      </if>
+      <if test="updateDatetime != null" >
+        update_datetime,
+      </if>
+      <if test="ordering != null" >
+        ordering,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="paramSort != null" >
+        #{paramSort,jdbcType=VARCHAR},
+      </if>
+      <if test="paramName != null" >
+        #{paramName,jdbcType=VARCHAR},
+      </if>
+      <if test="paramTypeEnum != null" >
+        #{paramTypeEnum,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="isDelete != null" >
+        #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="createDatetime != null" >
+        #{createDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDatetime != null" >
+        #{updateDatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ordering != null" >
+        #{ordering,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>
