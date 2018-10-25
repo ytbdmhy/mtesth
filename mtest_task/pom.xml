@@ -38,7 +38,7 @@
     <!--</repositories>-->
 
     <properties>
-        <!-- <commo.util.version>1.0.178</common.util.version> -->
+        <!-- <coutilsutil.version>1.0.178</comutilsutil.version> -->
         <activemq.version>5.8.0</activemq.version>
         <mail.version>1.5.0</mail.version>
         <!-- Spring Framework -->
@@ -280,7 +280,7 @@
             <!--<version>1.0</version>-->
         <!--</dependency>-->
 
-        <!-- util ref -->
+        <utilsutil ref -->
         <!--<dependency>-->
             <!--<groupId>com.alibaba</groupId>-->
             <!--<artifactId>fastjson</artifactId>-->

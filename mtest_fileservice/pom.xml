@@ -15,7 +15,7 @@
     <name>mtest_fileservice</name>
 
     <properties>
-        <!-- <common.util.version>1.0.183</common.util.version> -->
+        <!-- <comutilsutil.version>1.0.183</comutilsutil.version> -->
         <activemq.version>5.8.0</activemq.version>
         <mail.version>1.5.0</mail.version>
         <!-- Spring Framework -->
@@ -256,7 +256,7 @@
             <!--<version>1.0</version>-->
         <!--</dependency>-->
 
-        <!-- util ref -->
+        <utilsutil ref -->
         <!--<dependency>-->
             <!--<groupId>com.alibaba</groupId>-->
             <!--<artifactId>fastjson</artifactId>-->
