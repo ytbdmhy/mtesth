@@ -25,20 +25,6 @@
   <sql id="Blob_Column_List" >
     comment
   </sql>
-  <insert id="insert" parameterType="mtesth.api.content.model.PackageComment" >
-    insert into package_comment (id, package_id, site_id, 
-      user_id, user_name, user_email, 
-      submit_date, ip_address, is_public, 
-      is_removed, user_icon, user_mobile, 
-      reply_user_id, reply_content, reply_datetime, 
-      update_time, comment)
-    values (#{id,jdbcType=INTEGER}, #{packageId,jdbcType=INTEGER}, #{siteId,jdbcType=INTEGER}, 
-      #{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{userEmail,jdbcType=VARCHAR}, 
-      #{submitDate,jdbcType=TIMESTAMP}, #{ipAddress,jdbcType=VARCHAR}, #{isPublic,jdbcType=TINYINT}, 
-      #{isRemoved,jdbcType=TINYINT}, #{userIcon,jdbcType=VARCHAR}, #{userMobile,jdbcType=VARCHAR}, 
-      #{replyUserId,jdbcType=INTEGER}, #{replyContent,jdbcType=VARCHAR}, #{replyDatetime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{comment,jdbcType=LONGVARCHAR})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.PackageComment" >
     insert into package_comment
     <trim prefix="(" suffix=")" suffixOverrides="," >

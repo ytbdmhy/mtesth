@@ -8,12 +8,6 @@
     <result column="ordering" property="ordering" jdbcType="INTEGER" />
     <result column="category_flag" property="categoryFlag" jdbcType="VARCHAR" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.content.model.WarehousePackageCategories" >
-    insert into warehouse_package_categories (id, package_id, category_id, 
-      ordering, category_flag)
-    values (#{id,jdbcType=INTEGER}, #{packageId,jdbcType=INTEGER}, #{categoryId,jdbcType=INTEGER}, 
-      #{ordering,jdbcType=INTEGER}, #{categoryFlag,jdbcType=VARCHAR})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.WarehousePackageCategories" >
     insert into warehouse_package_categories
     <trim prefix="(" suffix=")" suffixOverrides="," >

@@ -30,28 +30,6 @@
     <result column="seo_description" property="seoDescription" jdbcType="VARCHAR" />
     <result column="author_id" property="authorId" jdbcType="INTEGER" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.content.model.Video" >
-    insert into video (id, name_zh, name_en, 
-      file_size, file_url, summary, 
-      description, mins, years, 
-      area, category_ids, category_text, 
-      actor, grade, look_count, 
-      real_look_count, resolution, status, 
-      release_time, create_by, create_time, 
-      update_time, video_type, tags_text, 
-      seo_keywords, seo_description, author_id
-      )
-    values (#{id,jdbcType=INTEGER}, #{nameZh,jdbcType=VARCHAR}, #{nameEn,jdbcType=VARCHAR}, 
-      #{fileSize,jdbcType=INTEGER}, #{fileUrl,jdbcType=VARCHAR}, #{summary,jdbcType=VARCHAR}, 
-      #{description,jdbcType=VARCHAR}, #{mins,jdbcType=INTEGER}, #{years,jdbcType=VARCHAR}, 
-      #{area,jdbcType=VARCHAR}, #{categoryIds,jdbcType=VARCHAR}, #{categoryText,jdbcType=VARCHAR}, 
-      #{actor,jdbcType=VARCHAR}, #{grade,jdbcType=DECIMAL}, #{lookCount,jdbcType=INTEGER}, 
-      #{realLookCount,jdbcType=INTEGER}, #{resolution,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
-      #{releaseTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{videoType,jdbcType=INTEGER}, #{tagsText,jdbcType=VARCHAR}, 
-      #{seoKeywords,jdbcType=VARCHAR}, #{seoDescription,jdbcType=VARCHAR}, #{authorId,jdbcType=INTEGER}
-      )
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.Video" >
     insert into video
     <trim prefix="(" suffix=")" suffixOverrides="," >

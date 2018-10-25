@@ -34,28 +34,6 @@
   <sql id="Blob_Column_List" >
     description, adapted_infomation
   </sql>
-  <insert id="insert" parameterType="mtesth.api.content.model.WarehousePackageWithBLOBs" >
-    insert into warehouse_package (id, title, package_name, 
-      platform_type, summary, tags_text, 
-      status, download_count, site_id, 
-      root_category_id, latest_version_id, delete_flag, 
-      standard_category_id, standard_category_names, 
-      download_click_count, download_complete_count, 
-      released_datetime, created_datetime, 
-      updated_datetime, last_modified, ios_package_id, 
-      keyword, description_seo, author_id, 
-      description, adapted_infomation)
-    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{packageName,jdbcType=VARCHAR}, 
-      #{platformType,jdbcType=VARCHAR}, #{summary,jdbcType=VARCHAR}, #{tagsText,jdbcType=VARCHAR}, 
-      #{status,jdbcType=VARCHAR}, #{downloadCount,jdbcType=INTEGER}, #{siteId,jdbcType=INTEGER}, 
-      #{rootCategoryId,jdbcType=INTEGER}, #{latestVersionId,jdbcType=INTEGER}, #{deleteFlag,jdbcType=INTEGER}, 
-      #{standardCategoryId,jdbcType=INTEGER}, #{standardCategoryNames,jdbcType=VARCHAR}, 
-      #{downloadClickCount,jdbcType=INTEGER}, #{downloadCompleteCount,jdbcType=INTEGER}, 
-      #{releasedDatetime,jdbcType=TIMESTAMP}, #{createdDatetime,jdbcType=TIMESTAMP}, 
-      #{updatedDatetime,jdbcType=TIMESTAMP}, #{lastModified,jdbcType=TIMESTAMP}, #{iosPackageId,jdbcType=INTEGER}, 
-      #{keyword,jdbcType=VARCHAR}, #{descriptionSeo,jdbcType=VARCHAR}, #{authorId,jdbcType=INTEGER}, 
-      #{description,jdbcType=LONGVARCHAR}, #{adaptedInfomation,jdbcType=LONGVARCHAR})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.WarehousePackageWithBLOBs" >
     insert into warehouse_package
     <trim prefix="(" suffix=")" suffixOverrides="," >

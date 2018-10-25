@@ -7,12 +7,6 @@
     <result column="content_type_id" property="contentTypeId" jdbcType="INTEGER" />
     <result column="object_id" property="objectId" jdbcType="INTEGER" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.content.model.TaggingTaggeditem" >
-    insert into tagging_taggeditem (id, tag_id, content_type_id, 
-      object_id)
-    values (#{id,jdbcType=INTEGER}, #{tagId,jdbcType=INTEGER}, #{contentTypeId,jdbcType=INTEGER}, 
-      #{objectId,jdbcType=INTEGER})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.TaggingTaggeditem" >
     insert into tagging_taggeditem
     <trim prefix="(" suffix=")" suffixOverrides="," >

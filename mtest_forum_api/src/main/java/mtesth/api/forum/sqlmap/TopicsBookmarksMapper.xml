@@ -7,12 +7,6 @@
     <result column="user_id" property="userId" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.forum.model.TopicsBookmarks" >
-    insert into topics_bookmarks (id, topic_id, user_id, 
-      create_time)
-    values (#{id,jdbcType=INTEGER}, #{topicId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
-      #{createTime,jdbcType=TIMESTAMP})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.forum.model.TopicsBookmarks" >
     insert into topics_bookmarks
     <trim prefix="(" suffix=")" suffixOverrides="," >

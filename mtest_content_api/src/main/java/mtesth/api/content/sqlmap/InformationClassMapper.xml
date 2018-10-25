@@ -11,14 +11,6 @@
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
     <result column="color_css" property="colorCss" jdbcType="VARCHAR" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.content.model.InformationClass" >
-    insert into information_class (id, name, code, 
-      order_no, content_count, create_time, 
-      update_time, color_css)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, 
-      #{orderNo,jdbcType=INTEGER}, #{contentCount,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{colorCss,jdbcType=VARCHAR})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.InformationClass" >
     insert into information_class
     <trim prefix="(" suffix=")" suffixOverrides="," >

@@ -7,12 +7,6 @@
     <result column="create_date" property="createDate" jdbcType="DATE" />
     <result column="look_cnt" property="lookCnt" jdbcType="INTEGER" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.content.model.DailyNewsLookCnt" >
-    insert into daily_news_look_cnt (news_id, news_content_type, create_date, 
-      look_cnt)
-    values (#{newsId,jdbcType=INTEGER}, #{newsContentType,jdbcType=VARCHAR}, #{createDate,jdbcType=DATE}, 
-      #{lookCnt,jdbcType=INTEGER})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.DailyNewsLookCnt" >
     insert into daily_news_look_cnt
     <trim prefix="(" suffix=")" suffixOverrides="," >

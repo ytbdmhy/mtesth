@@ -8,12 +8,6 @@
     <result column="url" property="url" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.content.model.VideoPics" >
-    insert into video_pics (id, video_id, type, 
-      url, create_time)
-    values (#{id,jdbcType=INTEGER}, #{videoId,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, 
-      #{url,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.VideoPics" >
     insert into video_pics
     <trim prefix="(" suffix=")" suffixOverrides="," >

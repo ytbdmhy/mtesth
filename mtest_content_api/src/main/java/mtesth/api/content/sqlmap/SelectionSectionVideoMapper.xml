@@ -10,14 +10,6 @@
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="create_by" property="createBy" jdbcType="INTEGER" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.content.model.SelectionSectionVideo" >
-    insert into selection_section_video (id, section_id, video_id, 
-      order_no, is_deleted, create_time, 
-      create_by)
-    values (#{id,jdbcType=INTEGER}, #{sectionId,jdbcType=INTEGER}, #{videoId,jdbcType=INTEGER}, 
-      #{orderNo,jdbcType=INTEGER}, #{isDeleted,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{createBy,jdbcType=INTEGER})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.SelectionSectionVideo" >
     insert into selection_section_video
     <trim prefix="(" suffix=")" suffixOverrides="," >

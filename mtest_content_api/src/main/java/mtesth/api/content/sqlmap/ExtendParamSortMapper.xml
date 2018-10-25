@@ -12,16 +12,6 @@
     <result column="update_datetime" property="updateDatetime" jdbcType="TIMESTAMP" />
     <result column="ordering" property="ordering" jdbcType="INTEGER" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.content.model.ExtendParamSort" >
-    insert into extend_param_sort (id, param_sort, param_name, 
-      param_type_enum, status, is_delete, 
-      create_datetime, update_datetime, ordering
-      )
-    values (#{id,jdbcType=INTEGER}, #{paramSort,jdbcType=VARCHAR}, #{paramName,jdbcType=VARCHAR}, 
-      #{paramTypeEnum,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{isDelete,jdbcType=INTEGER}, 
-      #{createDatetime,jdbcType=TIMESTAMP}, #{updateDatetime,jdbcType=TIMESTAMP}, #{ordering,jdbcType=INTEGER}
-      )
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.ExtendParamSort" >
     insert into extend_param_sort
     <trim prefix="(" suffix=")" suffixOverrides="," >

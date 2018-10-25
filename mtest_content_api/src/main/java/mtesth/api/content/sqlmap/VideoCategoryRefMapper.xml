@@ -8,12 +8,6 @@
     <result column="categroy_pid" property="categroyPid" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.content.model.VideoCategoryRef" >
-    insert into video_category_ref (id, video_id, categroy_id, 
-      categroy_pid, create_time)
-    values (#{id,jdbcType=INTEGER}, #{videoId,jdbcType=INTEGER}, #{categroyId,jdbcType=INTEGER}, 
-      #{categroyPid,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.VideoCategoryRef" >
     insert into video_category_ref
     <trim prefix="(" suffix=")" suffixOverrides="," >

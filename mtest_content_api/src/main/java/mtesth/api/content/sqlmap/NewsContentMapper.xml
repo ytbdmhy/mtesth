@@ -32,26 +32,6 @@
   <sql id="Blob_Column_List" >
     news_content
   </sql>
-  <insert id="insert" parameterType="mtesth.api.content.model.NewsContent" >
-    insert into news_content (id, news_title, news_summary, 
-      news_cover, status, is_top, 
-      top_datetime, released_datetime, created_datetime, 
-      updated_datetime, visitsnum, is_delete, 
-      bg_color, source, package_id, 
-      package_title, news_content_type, recommened_in_newgame, 
-      real_visitsnum, site_id, tags_text, 
-      seo_keywords, news_cover_alt, news_content
-      )
-    values (#{id,jdbcType=INTEGER}, #{newsTitle,jdbcType=VARCHAR}, #{newsSummary,jdbcType=VARCHAR}, 
-      #{newsCover,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{isTop,jdbcType=INTEGER}, 
-      #{topDatetime,jdbcType=TIMESTAMP}, #{releasedDatetime,jdbcType=TIMESTAMP}, #{createdDatetime,jdbcType=TIMESTAMP}, 
-      #{updatedDatetime,jdbcType=TIMESTAMP}, #{visitsnum,jdbcType=INTEGER}, #{isDelete,jdbcType=INTEGER}, 
-      #{bgColor,jdbcType=VARCHAR}, #{source,jdbcType=VARCHAR}, #{packageId,jdbcType=INTEGER}, 
-      #{packageTitle,jdbcType=VARCHAR}, #{newsContentType,jdbcType=VARCHAR}, #{recommenedInNewgame,jdbcType=INTEGER}, 
-      #{realVisitsnum,jdbcType=INTEGER}, #{siteId,jdbcType=INTEGER}, #{tagsText,jdbcType=VARCHAR}, 
-      #{seoKeywords,jdbcType=VARCHAR}, #{newsCoverAlt,jdbcType=VARCHAR}, #{newsContent,jdbcType=LONGVARCHAR}
-      )
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.NewsContent" >
     insert into news_content
     <trim prefix="(" suffix=")" suffixOverrides="," >

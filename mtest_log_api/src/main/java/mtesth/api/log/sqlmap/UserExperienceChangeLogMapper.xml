@@ -16,18 +16,6 @@
     <result column="ip" property="ip" jdbcType="VARCHAR" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.log.model.UserExperienceChangeLog" >
-    insert into user_experience_change_log (id, user_id, user_name, 
-      platform, action_type, action_name, 
-      action_title, experience, before_experience, 
-      after_experience, user_agent, ip, 
-      create_time)
-    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, 
-      #{platform,jdbcType=VARCHAR}, #{actionType,jdbcType=VARCHAR}, #{actionName,jdbcType=VARCHAR}, 
-      #{actionTitle,jdbcType=VARCHAR}, #{experience,jdbcType=INTEGER}, #{beforeExperience,jdbcType=INTEGER}, 
-      #{afterExperience,jdbcType=INTEGER}, #{userAgent,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.log.model.UserExperienceChangeLog" >
     insert into user_experience_change_log
     <trim prefix="(" suffix=")" suffixOverrides="," >

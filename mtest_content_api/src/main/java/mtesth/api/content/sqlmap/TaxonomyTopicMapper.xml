@@ -26,26 +26,6 @@
     <result column="is_index" property="isIndex" jdbcType="INTEGER" />
     <result column="action" property="action" jdbcType="VARCHAR" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.content.model.TaxonomyTopic" >
-    insert into taxonomy_topic (id, name, slug, 
-      ordering, parent_id, icon, 
-      cover, summary, status, 
-      released_datetime, updated_datetime, 
-      created_datetime, mptt_lft, mptt_rgt, 
-      tree_id, mptt_level, is_hidden, 
-      site_id, resources_count, content_type, 
-      limit_channel, is_index, action
-      )
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{slug,jdbcType=VARCHAR}, 
-      #{ordering,jdbcType=INTEGER}, #{parentId,jdbcType=INTEGER}, #{icon,jdbcType=VARCHAR}, 
-      #{cover,jdbcType=VARCHAR}, #{summary,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
-      #{releasedDatetime,jdbcType=TIMESTAMP}, #{updatedDatetime,jdbcType=TIMESTAMP}, 
-      #{createdDatetime,jdbcType=TIMESTAMP}, #{mpttLft,jdbcType=INTEGER}, #{mpttRgt,jdbcType=INTEGER}, 
-      #{treeId,jdbcType=INTEGER}, #{mpttLevel,jdbcType=INTEGER}, #{isHidden,jdbcType=TINYINT}, 
-      #{siteId,jdbcType=INTEGER}, #{resourcesCount,jdbcType=INTEGER}, #{contentType,jdbcType=VARCHAR}, 
-      #{limitChannel,jdbcType=VARCHAR}, #{isIndex,jdbcType=INTEGER}, #{action,jdbcType=VARCHAR}
-      )
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.TaxonomyTopic" >
     insert into taxonomy_topic
     <trim prefix="(" suffix=")" suffixOverrides="," >

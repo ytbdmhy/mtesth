@@ -14,16 +14,6 @@
     <result column="mutex_flag" property="mutexFlag" jdbcType="VARCHAR" />
     <result column="after_minutes" property="afterMinutes" jdbcType="INTEGER" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.common.model.TaskTiming" >
-    insert into task_timing (id, task_type, execute_time, 
-      interface_name, parameters, status, 
-      create_datetime, update_datetime, main_task_id, 
-      mutex_flag, after_minutes)
-    values (#{id,jdbcType=INTEGER}, #{taskType,jdbcType=VARCHAR}, #{executeTime,jdbcType=TIMESTAMP}, 
-      #{interfaceName,jdbcType=VARCHAR}, #{parameters,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
-      #{createDatetime,jdbcType=TIMESTAMP}, #{updateDatetime,jdbcType=TIMESTAMP}, #{mainTaskId,jdbcType=INTEGER}, 
-      #{mutexFlag,jdbcType=VARCHAR}, #{afterMinutes,jdbcType=INTEGER})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.common.model.TaskTiming" >
     insert into task_timing
     <trim prefix="(" suffix=")" suffixOverrides="," >

@@ -27,22 +27,6 @@
   <sql id="Blob_Column_List" >
     whatsnew, memorandum
   </sql>
-  <insert id="insert" parameterType="mtesth.api.common.model.ClientVersionWithBLOBs" >
-    insert into client_version (id, icon, cover, 
-      package_name, version_name, version_code, 
-      download_url, download_size, download_count, 
-      summary, status, site_id, 
-      release_datetime, create_datetime, create_by, 
-      update_datetime, update_by, whatsnew, 
-      memorandum)
-    values (#{id,jdbcType=INTEGER}, #{icon,jdbcType=VARCHAR}, #{cover,jdbcType=VARCHAR}, 
-      #{packageName,jdbcType=VARCHAR}, #{versionName,jdbcType=VARCHAR}, #{versionCode,jdbcType=INTEGER}, 
-      #{downloadUrl,jdbcType=VARCHAR}, #{downloadSize,jdbcType=INTEGER}, #{downloadCount,jdbcType=INTEGER}, 
-      #{summary,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{siteId,jdbcType=INTEGER}, 
-      #{releaseDatetime,jdbcType=TIMESTAMP}, #{createDatetime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=INTEGER}, 
-      #{updateDatetime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=INTEGER}, #{whatsnew,jdbcType=LONGVARCHAR}, 
-      #{memorandum,jdbcType=LONGVARCHAR})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.common.model.ClientVersionWithBLOBs" >
     insert into client_version
     <trim prefix="(" suffix=")" suffixOverrides="," >

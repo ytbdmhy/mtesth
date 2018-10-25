@@ -14,16 +14,6 @@
     <result column="update_datetime" property="updateDatetime" jdbcType="TIMESTAMP" />
     <result column="update_by" property="updateBy" jdbcType="INTEGER" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.common.model.PlaceAdv" >
-    insert into place_adv (id, place_id, adv_id, 
-      display_order, status, release_datetime, 
-      expiry_datetime, create_datetime, create_by, 
-      update_datetime, update_by)
-    values (#{id,jdbcType=INTEGER}, #{placeId,jdbcType=INTEGER}, #{advId,jdbcType=INTEGER}, 
-      #{displayOrder,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}, #{releaseDatetime,jdbcType=TIMESTAMP}, 
-      #{expiryDatetime,jdbcType=TIMESTAMP}, #{createDatetime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=INTEGER}, 
-      #{updateDatetime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=INTEGER})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.common.model.PlaceAdv" >
     insert into place_adv
     <trim prefix="(" suffix=")" suffixOverrides="," >

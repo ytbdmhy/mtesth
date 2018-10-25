@@ -13,16 +13,6 @@
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="is_delete" property="isDelete" jdbcType="INTEGER" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.forum.model.ReplyToMe" >
-    insert into reply_to_me (id, reply_from, reply_to, 
-      reply_type, topic_id, reply_id, 
-      reply_of_reply_id, look_time, create_time, 
-      is_delete)
-    values (#{id,jdbcType=INTEGER}, #{replyFrom,jdbcType=INTEGER}, #{replyTo,jdbcType=INTEGER}, 
-      #{replyType,jdbcType=INTEGER}, #{topicId,jdbcType=INTEGER}, #{replyId,jdbcType=INTEGER}, 
-      #{replyOfReplyId,jdbcType=INTEGER}, #{lookTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{isDelete,jdbcType=INTEGER})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.forum.model.ReplyToMe" >
     insert into reply_to_me
     <trim prefix="(" suffix=")" suffixOverrides="," >

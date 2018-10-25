@@ -25,26 +25,6 @@
     <result column="ip" property="ip" jdbcType="VARCHAR" />
     <result column="user_agent" property="userAgent" jdbcType="VARCHAR" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.log.model.PackageAndroidDownloadLogHistory" >
-    insert into package_android_download_log_history (id, package_id, package_name, 
-      package_title, root_category_id, root_category_slug, 
-      root_category_name, stars_average, download_url, 
-      standard_category_id, standard_category_names, 
-      version_id, version_name, version_code, 
-      platform_type, icon, source_site_id, 
-      source_plateform_code, source_function_code, 
-      create_time, ip, user_agent
-      )
-    values (#{id,jdbcType=INTEGER}, #{packageId,jdbcType=INTEGER}, #{packageName,jdbcType=VARCHAR}, 
-      #{packageTitle,jdbcType=VARCHAR}, #{rootCategoryId,jdbcType=INTEGER}, #{rootCategorySlug,jdbcType=VARCHAR}, 
-      #{rootCategoryName,jdbcType=VARCHAR}, #{starsAverage,jdbcType=INTEGER}, #{downloadUrl,jdbcType=VARCHAR}, 
-      #{standardCategoryId,jdbcType=INTEGER}, #{standardCategoryNames,jdbcType=VARCHAR}, 
-      #{versionId,jdbcType=INTEGER}, #{versionName,jdbcType=VARCHAR}, #{versionCode,jdbcType=INTEGER}, 
-      #{platformType,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR}, #{sourceSiteId,jdbcType=INTEGER}, 
-      #{sourcePlateformCode,jdbcType=VARCHAR}, #{sourceFunctionCode,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{ip,jdbcType=VARCHAR}, #{userAgent,jdbcType=VARCHAR}
-      )
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.log.model.PackageAndroidDownloadLogHistory" >
     insert into package_android_download_log_history
     <trim prefix="(" suffix=")" suffixOverrides="," >

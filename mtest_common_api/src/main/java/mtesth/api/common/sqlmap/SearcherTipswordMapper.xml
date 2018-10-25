@@ -14,16 +14,6 @@
     <result column="create_by" property="createBy" jdbcType="INTEGER" />
     <result column="site_id" property="siteId" jdbcType="INTEGER" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.common.model.SearcherTipsword" >
-    insert into searcher_tipsword (id, keyword, weight, 
-      status, type, released_datetime, 
-      updated_datetime, update_by, created_datetime, 
-      create_by, site_id)
-    values (#{id,jdbcType=INTEGER}, #{keyword,jdbcType=VARCHAR}, #{weight,jdbcType=INTEGER}, 
-      #{status,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}, #{releasedDatetime,jdbcType=TIMESTAMP}, 
-      #{updatedDatetime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=INTEGER}, #{createdDatetime,jdbcType=TIMESTAMP}, 
-      #{createBy,jdbcType=INTEGER}, #{siteId,jdbcType=INTEGER})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.common.model.SearcherTipsword" >
     insert into searcher_tipsword
     <trim prefix="(" suffix=")" suffixOverrides="," >

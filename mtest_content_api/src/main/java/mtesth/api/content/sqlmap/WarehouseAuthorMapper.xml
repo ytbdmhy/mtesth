@@ -13,16 +13,6 @@
     <result column="created_datetime" property="createdDatetime" jdbcType="TIMESTAMP" />
     <result column="updated_datetime" property="updatedDatetime" jdbcType="TIMESTAMP" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.content.model.WarehouseAuthor" >
-    insert into warehouse_author (id, name, email, 
-      phone, status, icon, 
-      cover, delete_flag, created_datetime, 
-      updated_datetime)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
-      #{phone,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR}, 
-      #{cover,jdbcType=VARCHAR}, #{deleteFlag,jdbcType=INTEGER}, #{createdDatetime,jdbcType=TIMESTAMP}, 
-      #{updatedDatetime,jdbcType=TIMESTAMP})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.WarehouseAuthor" >
     insert into warehouse_author
     <trim prefix="(" suffix=")" suffixOverrides="," >

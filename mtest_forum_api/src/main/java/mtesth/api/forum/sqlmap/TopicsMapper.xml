@@ -26,22 +26,6 @@
   <sql id="Blob_Column_List" >
     content
   </sql>
-  <insert id="insert" parameterType="mtesth.api.forum.model.Topics" >
-    insert into topics (id, title, praise_count, 
-      reply_count, circle_id, is_recommend, 
-      recommend_time, create_by, create_time, 
-      update_time, is_deleted, delete_user_id, 
-      type, video_file, look_count, 
-      is_enable, title_prefix, content
-      )
-    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{praiseCount,jdbcType=INTEGER}, 
-      #{replyCount,jdbcType=INTEGER}, #{circleId,jdbcType=INTEGER}, #{isRecommend,jdbcType=INTEGER}, 
-      #{recommendTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{isDeleted,jdbcType=INTEGER}, #{deleteUserId,jdbcType=INTEGER}, 
-      #{type,jdbcType=INTEGER}, #{videoFile,jdbcType=VARCHAR}, #{lookCount,jdbcType=INTEGER}, 
-      #{isEnable,jdbcType=INTEGER}, #{titlePrefix,jdbcType=VARCHAR}, #{content,jdbcType=LONGVARCHAR}
-      )
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.forum.model.Topics" >
     insert into topics
     <trim prefix="(" suffix=")" suffixOverrides="," >

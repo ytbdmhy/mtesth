@@ -13,16 +13,6 @@
     <result column="updated_datetime" property="updatedDatetime" jdbcType="TIMESTAMP" />
     <result column="update_by" property="updateBy" jdbcType="INTEGER" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.common.model.VrDevice" >
-    insert into vr_device (id, name, code, 
-      site_id, status, order_no, 
-      created_datetime, create_by, updated_datetime, 
-      update_by)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, 
-      #{siteId,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}, #{orderNo,jdbcType=INTEGER}, 
-      #{createdDatetime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=INTEGER}, #{updatedDatetime,jdbcType=TIMESTAMP}, 
-      #{updateBy,jdbcType=INTEGER})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.common.model.VrDevice" >
     insert into vr_device
     <trim prefix="(" suffix=")" suffixOverrides="," >

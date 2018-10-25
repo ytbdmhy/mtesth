@@ -25,20 +25,6 @@
   <sql id="Blob_Column_List" >
     content, reply_content
   </sql>
-  <insert id="insert" parameterType="mtesth.api.content.model.CommentsNewsWithBLOBs" >
-    insert into comments_news (id, news_id, user_id, 
-      nickname, phone, ip_address, 
-      user_icon, time, praise_cnt, 
-      site_id, is_public, is_deleted, 
-      reply_user_id, reply_time, update_time, 
-      content, reply_content)
-    values (#{id,jdbcType=INTEGER}, #{newsId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
-      #{nickname,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{ipAddress,jdbcType=VARCHAR}, 
-      #{userIcon,jdbcType=VARCHAR}, #{time,jdbcType=TIMESTAMP}, #{praiseCnt,jdbcType=INTEGER}, 
-      #{siteId,jdbcType=INTEGER}, #{isPublic,jdbcType=INTEGER}, #{isDeleted,jdbcType=INTEGER}, 
-      #{replyUserId,jdbcType=INTEGER}, #{replyTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{content,jdbcType=LONGVARCHAR}, #{replyContent,jdbcType=LONGVARCHAR})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.CommentsNewsWithBLOBs" >
     insert into comments_news
     <trim prefix="(" suffix=")" suffixOverrides="," >

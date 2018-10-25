@@ -9,14 +9,6 @@
     <result column="user_id" property="userId" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.content.model.CommentTagUserClickLog" >
-    insert into comment_tag_user_click_log (id, object_id, content_type, 
-      comment_tag_id, user_id, create_time
-      )
-    values (#{id,jdbcType=INTEGER}, #{objectId,jdbcType=INTEGER}, #{contentType,jdbcType=VARCHAR}, 
-      #{commentTagId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}
-      )
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.CommentTagUserClickLog" >
     insert into comment_tag_user_click_log
     <trim prefix="(" suffix=")" suffixOverrides="," >

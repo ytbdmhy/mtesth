@@ -11,14 +11,6 @@
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="create_by" property="createBy" jdbcType="INTEGER" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.content.model.SelectionSectionPackage" >
-    insert into selection_section_package (id, section_id, package_id, 
-      order_no, site_id, is_deleted, 
-      create_time, create_by)
-    values (#{id,jdbcType=INTEGER}, #{sectionId,jdbcType=INTEGER}, #{packageId,jdbcType=INTEGER}, 
-      #{orderNo,jdbcType=INTEGER}, #{siteId,jdbcType=INTEGER}, #{isDeleted,jdbcType=INTEGER}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=INTEGER})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.SelectionSectionPackage" >
     insert into selection_section_package
     <trim prefix="(" suffix=")" suffixOverrides="," >

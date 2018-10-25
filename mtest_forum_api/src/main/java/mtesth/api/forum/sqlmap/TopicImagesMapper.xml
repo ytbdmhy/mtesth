@@ -9,14 +9,6 @@
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="is_delete" property="isDelete" jdbcType="INTEGER" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.forum.model.TopicImages" >
-    insert into topic_images (id, topic_id, image, 
-      order_no, create_time, is_delete
-      )
-    values (#{id,jdbcType=INTEGER}, #{topicId,jdbcType=INTEGER}, #{image,jdbcType=VARCHAR}, 
-      #{orderNo,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{isDelete,jdbcType=INTEGER}
-      )
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.forum.model.TopicImages" >
     insert into topic_images
     <trim prefix="(" suffix=")" suffixOverrides="," >

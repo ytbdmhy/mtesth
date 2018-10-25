@@ -11,14 +11,6 @@
     <result column="media_type" property="mediaType" jdbcType="VARCHAR" />
     <result column="url" property="url" jdbcType="VARCHAR" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.content.model.WarehousePackageversionscreenshot" >
-    insert into warehouse_packageversionscreenshot (id, version_id, image, 
-      alt, rotate, kind, 
-      media_type, url)
-    values (#{id,jdbcType=INTEGER}, #{versionId,jdbcType=INTEGER}, #{image,jdbcType=VARCHAR}, 
-      #{alt,jdbcType=VARCHAR}, #{rotate,jdbcType=VARCHAR}, #{kind,jdbcType=VARCHAR}, 
-      #{mediaType,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.WarehousePackageversionscreenshot" >
     insert into warehouse_packageversionscreenshot
     <trim prefix="(" suffix=")" suffixOverrides="," >

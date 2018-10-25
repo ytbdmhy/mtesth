@@ -17,18 +17,6 @@
     <result column="refresh_flag" property="refreshFlag" jdbcType="INTEGER" />
     <result column="file_path" property="filePath" jdbcType="VARCHAR" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.common.model.NginxCacheKey" >
-    insert into nginx_cache_key (id, name, cache_type, 
-      cache_key, create_time, cache_site, 
-      nginx_server, type_value, codes, 
-      cache_param, delete_flag, clear_flag, 
-      refresh_flag, file_path)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{cacheType,jdbcType=VARCHAR}, 
-      #{cacheKey,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{cacheSite,jdbcType=VARCHAR}, 
-      #{nginxServer,jdbcType=VARCHAR}, #{typeValue,jdbcType=VARCHAR}, #{codes,jdbcType=VARCHAR}, 
-      #{cacheParam,jdbcType=VARCHAR}, #{deleteFlag,jdbcType=INTEGER}, #{clearFlag,jdbcType=INTEGER}, 
-      #{refreshFlag,jdbcType=INTEGER}, #{filePath,jdbcType=VARCHAR})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.common.model.NginxCacheKey" >
     insert into nginx_cache_key
     <trim prefix="(" suffix=")" suffixOverrides="," >

@@ -14,16 +14,6 @@
     <result column="update_by" property="updateBy" jdbcType="INTEGER" />
     <result column="cover" property="cover" jdbcType="VARCHAR" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.content.model.VideoCategory" >
-    insert into video_category (id, name, pid, 
-      order_no, is_enable, is_deleted, 
-      create_time, create_by, update_time, 
-      update_by, cover)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{pid,jdbcType=INTEGER}, 
-      #{orderNo,jdbcType=INTEGER}, #{isEnable,jdbcType=INTEGER}, #{isDeleted,jdbcType=INTEGER}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{updateBy,jdbcType=INTEGER}, #{cover,jdbcType=VARCHAR})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.VideoCategory" >
     insert into video_category
     <trim prefix="(" suffix=")" suffixOverrides="," >

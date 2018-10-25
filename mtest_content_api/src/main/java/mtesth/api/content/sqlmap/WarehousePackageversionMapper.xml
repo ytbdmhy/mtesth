@@ -40,30 +40,6 @@
   <sql id="Blob_Column_List" >
     whatsnew, description
   </sql>
-  <insert id="insert" parameterType="mtesth.api.content.model.WarehousePackageversionWithBLOBs" >
-    insert into warehouse_packageversion (id, package_id, version_name, 
-      version_code, status, released_datetime, 
-      created_datetime, updated_datetime, icon, 
-      download, cover, download_count, 
-      site_id, subtitle, summary, 
-      download_size, download_md5, tags_text, 
-      workspace, resources_count, comments_count, 
-      delete_flag, chinese_name, english_name, 
-      property_flag, property_flag_expiry, updates_log, 
-      ios_package_size, stars_average, allocation_plan, 
-      whatsnew, description)
-    values (#{id,jdbcType=INTEGER}, #{packageId,jdbcType=INTEGER}, #{versionName,jdbcType=VARCHAR}, 
-      #{versionCode,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}, #{releasedDatetime,jdbcType=TIMESTAMP}, 
-      #{createdDatetime,jdbcType=TIMESTAMP}, #{updatedDatetime,jdbcType=TIMESTAMP}, #{icon,jdbcType=VARCHAR}, 
-      #{download,jdbcType=VARCHAR}, #{cover,jdbcType=VARCHAR}, #{downloadCount,jdbcType=INTEGER}, 
-      #{siteId,jdbcType=INTEGER}, #{subtitle,jdbcType=VARCHAR}, #{summary,jdbcType=VARCHAR}, 
-      #{downloadSize,jdbcType=INTEGER}, #{downloadMd5,jdbcType=VARCHAR}, #{tagsText,jdbcType=VARCHAR}, 
-      #{workspace,jdbcType=VARCHAR}, #{resourcesCount,jdbcType=INTEGER}, #{commentsCount,jdbcType=INTEGER}, 
-      #{deleteFlag,jdbcType=INTEGER}, #{chineseName,jdbcType=VARCHAR}, #{englishName,jdbcType=VARCHAR}, 
-      #{propertyFlag,jdbcType=VARCHAR}, #{propertyFlagExpiry,jdbcType=TIMESTAMP}, #{updatesLog,jdbcType=VARCHAR}, 
-      #{iosPackageSize,jdbcType=VARCHAR}, #{starsAverage,jdbcType=REAL}, #{allocationPlan,jdbcType=VARCHAR}, 
-      #{whatsnew,jdbcType=LONGVARCHAR}, #{description,jdbcType=LONGVARCHAR})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.WarehousePackageversionWithBLOBs" >
     insert into warehouse_packageversion
     <trim prefix="(" suffix=")" suffixOverrides="," >

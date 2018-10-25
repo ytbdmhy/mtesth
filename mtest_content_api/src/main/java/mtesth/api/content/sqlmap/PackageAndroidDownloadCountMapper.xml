@@ -7,12 +7,6 @@
     <result column="create_date" property="createDate" jdbcType="DATE" />
     <result column="cnt" property="cnt" jdbcType="INTEGER" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.content.model.PackageAndroidDownloadCount" >
-    insert into package_android_download_count (id, package_id, create_date, 
-      cnt)
-    values (#{id,jdbcType=INTEGER}, #{packageId,jdbcType=INTEGER}, #{createDate,jdbcType=DATE}, 
-      #{cnt,jdbcType=INTEGER})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.PackageAndroidDownloadCount" >
     insert into package_android_download_count
     <trim prefix="(" suffix=")" suffixOverrides="," >

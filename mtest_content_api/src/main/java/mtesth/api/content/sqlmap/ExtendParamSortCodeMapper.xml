@@ -8,12 +8,6 @@
     <result column="param_code_value" property="paramCodeValue" jdbcType="VARCHAR" />
     <result column="update_datetime" property="updateDatetime" jdbcType="TIMESTAMP" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.content.model.ExtendParamSortCode" >
-    insert into extend_param_sort_code (id, param_sort_id, object_id, 
-      param_code_value, update_datetime)
-    values (#{id,jdbcType=INTEGER}, #{paramSortId,jdbcType=INTEGER}, #{objectId,jdbcType=INTEGER}, 
-      #{paramCodeValue,jdbcType=VARCHAR}, #{updateDatetime,jdbcType=TIMESTAMP})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.ExtendParamSortCode" >
     insert into extend_param_sort_code
     <trim prefix="(" suffix=")" suffixOverrides="," >

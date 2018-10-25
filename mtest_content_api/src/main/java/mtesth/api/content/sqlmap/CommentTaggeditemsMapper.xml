@@ -8,12 +8,6 @@
     <result column="comment_tag_id" property="commentTagId" jdbcType="INTEGER" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.content.model.CommentTaggeditems" >
-    insert into comment_taggeditems (id, object_id, content_type, 
-      comment_tag_id, create_time)
-    values (#{id,jdbcType=INTEGER}, #{objectId,jdbcType=INTEGER}, #{contentType,jdbcType=VARCHAR}, 
-      #{commentTagId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.CommentTaggeditems" >
     insert into comment_taggeditems
     <trim prefix="(" suffix=")" suffixOverrides="," >

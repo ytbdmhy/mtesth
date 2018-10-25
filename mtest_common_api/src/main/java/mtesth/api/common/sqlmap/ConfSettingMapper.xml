@@ -13,12 +13,6 @@
   <sql id="Blob_Column_List" >
     value
   </sql>
-  <insert id="insert" parameterType="mtesth.api.common.model.ConfSetting" >
-    insert into conf_setting (id, name, site_id, 
-      description, value)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{siteId,jdbcType=INTEGER}, 
-      #{description,jdbcType=VARCHAR}, #{value,jdbcType=LONGVARCHAR})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.common.model.ConfSetting" >
     insert into conf_setting
     <trim prefix="(" suffix=")" suffixOverrides="," >

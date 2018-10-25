@@ -14,16 +14,6 @@
     <result column="persist_type" property="persistType" jdbcType="VARCHAR" />
     <result column="persist_id" property="persistId" jdbcType="VARCHAR" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.common.model.FileUploadLog" >
-    insert into file_upload_log (id, file_uri, file_type, 
-      mime_type, file_size, file_md5, 
-      create_datetime, update_datetime, status, 
-      persist_type, persist_id)
-    values (#{id,jdbcType=INTEGER}, #{fileUri,jdbcType=VARCHAR}, #{fileType,jdbcType=VARCHAR}, 
-      #{mimeType,jdbcType=VARCHAR}, #{fileSize,jdbcType=INTEGER}, #{fileMd5,jdbcType=VARCHAR}, 
-      #{createDatetime,jdbcType=TIMESTAMP}, #{updateDatetime,jdbcType=TIMESTAMP}, #{status,jdbcType=VARCHAR}, 
-      #{persistType,jdbcType=VARCHAR}, #{persistId,jdbcType=VARCHAR})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.common.model.FileUploadLog" >
     insert into file_upload_log
     <trim prefix="(" suffix=")" suffixOverrides="," >

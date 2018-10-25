@@ -9,14 +9,6 @@
     <result column="create_datetime" property="createDatetime" jdbcType="TIMESTAMP" />
     <result column="update_datetime" property="updateDatetime" jdbcType="TIMESTAMP" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.content.model.PcGamePlatform" >
-    insert into pc_game_platform (id, platform_name, platform_alias, 
-      delete_flag, create_datetime, update_datetime
-      )
-    values (#{id,jdbcType=INTEGER}, #{platformName,jdbcType=VARCHAR}, #{platformAlias,jdbcType=VARCHAR}, 
-      #{deleteFlag,jdbcType=INTEGER}, #{createDatetime,jdbcType=TIMESTAMP}, #{updateDatetime,jdbcType=TIMESTAMP}
-      )
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.PcGamePlatform" >
     insert into pc_game_platform
     <trim prefix="(" suffix=")" suffixOverrides="," >

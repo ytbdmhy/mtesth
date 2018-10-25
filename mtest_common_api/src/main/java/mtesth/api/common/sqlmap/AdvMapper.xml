@@ -17,18 +17,6 @@
     <result column="released_datetime" property="releasedDatetime" jdbcType="TIMESTAMP" />
     <result column="expiry_datetime" property="expiryDatetime" jdbcType="TIMESTAMP" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.common.model.Adv" >
-    insert into adv (id, cover, title, 
-      content_type, object_id, object_code, 
-      link, status, created_datetime, 
-      create_by, updated_datetime, update_by, 
-      released_datetime, expiry_datetime)
-    values (#{id,jdbcType=INTEGER}, #{cover,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
-      #{contentType,jdbcType=VARCHAR}, #{objectId,jdbcType=INTEGER}, #{objectCode,jdbcType=VARCHAR}, 
-      #{link,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{createdDatetime,jdbcType=TIMESTAMP}, 
-      #{createBy,jdbcType=INTEGER}, #{updatedDatetime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=INTEGER}, 
-      #{releasedDatetime,jdbcType=TIMESTAMP}, #{expiryDatetime,jdbcType=TIMESTAMP})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.common.model.Adv" >
     insert into adv
     <trim prefix="(" suffix=")" suffixOverrides="," >

@@ -12,16 +12,6 @@
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
     <result column="is_deleted" property="isDeleted" jdbcType="INTEGER" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.forum.model.TopicReply" >
-    insert into topic_reply (id, topic_id, user_id, 
-      reply_content, floor, praise_count, 
-      create_time, update_time, is_deleted
-      )
-    values (#{id,jdbcType=INTEGER}, #{topicId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
-      #{replyContent,jdbcType=VARCHAR}, #{floor,jdbcType=INTEGER}, #{praiseCount,jdbcType=INTEGER}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{isDeleted,jdbcType=INTEGER}
-      )
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.forum.model.TopicReply" >
     insert into topic_reply
     <trim prefix="(" suffix=")" suffixOverrides="," >

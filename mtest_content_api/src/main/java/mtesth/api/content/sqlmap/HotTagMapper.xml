@@ -8,12 +8,6 @@
     <result column="created_datetime" property="createdDatetime" jdbcType="TIMESTAMP" />
     <result column="updated_datetime" property="updatedDatetime" jdbcType="TIMESTAMP" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.content.model.HotTag" >
-    insert into hot_tag (id, name, order, 
-      created_datetime, updated_datetime)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{order,jdbcType=INTEGER}, 
-      #{createdDatetime,jdbcType=TIMESTAMP}, #{updatedDatetime,jdbcType=TIMESTAMP})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.HotTag" >
     insert into hot_tag
     <trim prefix="(" suffix=")" suffixOverrides="," >

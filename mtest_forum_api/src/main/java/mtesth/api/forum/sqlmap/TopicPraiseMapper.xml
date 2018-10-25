@@ -8,12 +8,6 @@
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="is_delete" property="isDelete" jdbcType="INTEGER" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.forum.model.TopicPraise" >
-    insert into topic_praise (id, topic_id, user_id, 
-      create_time, is_delete)
-    values (#{id,jdbcType=INTEGER}, #{topicId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{isDelete,jdbcType=INTEGER})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.forum.model.TopicPraise" >
     insert into topic_praise
     <trim prefix="(" suffix=")" suffixOverrides="," >

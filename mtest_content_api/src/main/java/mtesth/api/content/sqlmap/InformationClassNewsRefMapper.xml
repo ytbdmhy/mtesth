@@ -8,12 +8,6 @@
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
-  <insert id="insert" parameterType="mtesth.api.content.model.InformationClassNewsRef" >
-    insert into information_class_news_ref (id, class_id, news_id, 
-      create_time, update_time)
-    values (#{id,jdbcType=INTEGER}, #{classId,jdbcType=INTEGER}, #{newsId,jdbcType=INTEGER}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
-  </insert>
   <insert id="insertSelective" parameterType="mtesth.api.content.model.InformationClassNewsRef" >
     insert into information_class_news_ref
     <trim prefix="(" suffix=")" suffixOverrides="," >
