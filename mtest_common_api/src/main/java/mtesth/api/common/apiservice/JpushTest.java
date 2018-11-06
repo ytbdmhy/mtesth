@@ -15,6 +15,8 @@ import mtesth.api.common.service.JpushService;
 import mtesth.api.common.service.impl.JpushServiceImpl;
 import org.springframework.stereotype.Controller;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -66,6 +68,9 @@ public class JpushTest {
         String masterSecret = "8fbb0e146701c2ee21065a8a";
         List<String> list = new ArrayList<String>();
         list.add("100760");
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Long time = timestamp.getTime() / 1000;
 
         //创建JPushClient
         JPushClient jpushClient = new JPushClient(masterSecret, appKey);
@@ -77,7 +82,8 @@ public class JpushTest {
                                 .setAlert(parm.get("msg"))
                                 .setBadge(+1)
                                 .setSound("happy")//这里是设置提示音(更多可以去官网看看)
-                                .addExtra("from","JPush")
+                                .addExtra("from", "Jpush")
+                                .addExtra("time", String.valueOf(time))
                                 .build())
                         .build())
                 .setOptions(Options.newBuilder().setApnsProduction(false).build())
