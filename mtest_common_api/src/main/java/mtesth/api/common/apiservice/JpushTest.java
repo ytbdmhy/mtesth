@@ -11,8 +11,12 @@ import cn.jpush.api.push.model.PushPayload;
 import cn.jpush.api.push.model.audience.Audience;
 import cn.jpush.api.push.model.notification.IosNotification;
 import cn.jpush.api.push.model.notification.Notification;
+import com.hgv.base.annotations.ApiMethod;
+import com.hgv.base.dto.ApiRequest;
+import com.hgv.base.dto.ApiResponse;
 import mtesth.api.common.service.JpushService;
 import mtesth.api.common.service.impl.JpushServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import java.sql.Timestamp;
@@ -29,7 +33,7 @@ public class JpushTest {
         Map<String,String> parm = new HashMap<String, String>();
         parm.put("id","111");
         parm.put("title","tttttitle");
-        parm.put("msg","所有人JPush测试haoyun");
+        parm.put("msg","生产-所有人JPush测试");
 //        pushMsg(parm);
         jpushIOS(parm);
     }
@@ -76,7 +80,7 @@ public class JpushTest {
         JPushClient jpushClient = new JPushClient(masterSecret, appKey);
         PushPayload payload = PushPayload.newBuilder()
                 .setPlatform(Platform.ios())//ios平台的用户
-                .setAudience(Audience.alias(list))//所有用户
+                .setAudience(Audience.all())//所有用户
                 .setNotification(Notification.newBuilder()
                         .addPlatformNotification(IosNotification.newBuilder()
                                 .setAlert(parm.get("msg"))
@@ -96,6 +100,27 @@ public class JpushTest {
             e.printStackTrace();
         } catch (APIRequestException e) {
             e.printStackTrace();
+        }
+
+        @Autowired
+        private SysMenuMapper sysMenuMapper;
+
+        @Autowired
+        private SysRoleMenuMapper sysRoleMenuMapper;
+
+        @ApiMethod(descript = "加", value = "backend.admin.adds")
+        public ApiResponse addS(ApiRequest apiReq) {
+            List<SysMenu> _results = this.sysMenuMapper.selectList(apiReq);
+            Map<String, Object> params = new HashMap<String, Object>();
+            params.put("roleId",10000);
+            List<SysRoleMenu> sysRoleMenuList = this.sysRoleMenuMapper.selectList(params);
+            for (SysMenu result : _results) {
+                for (SysRoleMenu sysRoleMenu : sysRoleMenuList) {
+                    if () {
+
+                    }
+                }
+            }
         }
     }
 }
