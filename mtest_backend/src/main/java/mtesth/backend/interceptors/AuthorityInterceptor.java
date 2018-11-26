@@ -1,5 +1,7 @@
 package mtesth.backend.interceptors;
 
+import com.hgv.base.utils.JsonUtil;
+import com.hgv.base.web.WebHelper;
 import mtesth.backend.dto.SysUser;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
@@ -8,6 +10,7 @@ import org.springframework.web.util.WebUtils;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -64,5 +67,25 @@ public class AuthorityInterceptor extends HandlerInterceptorAdapter {
      */
     boolean onAccessAllowed(HttpServletRequest request, HttpServletResponse response) throws IOException {
         return true;
+    }
+
+    /**
+     * 无权限访问
+     * @param request
+     * @param response
+     * @return
+     * @throws Exception
+     */
+    boolean onAccessDenied(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        String authorityUrl = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath() + "/noAuthority";
+        if (request.getServerPort() == 80) {
+            authorityUrl = request.getScheme() + "://" + request.getServerName() + request.getContextPath() + "/noAuthority";
+        }
+        if (WebHelper.isAjaxRequest(request)) {
+            Map<String, Object> retMap = new HashMap<String, Object>();
+            retMap.put("noAuthority", true);
+            retMap.put("authorityUrl", authorityUrl);
+            String json = JsonUtil
+        }
     }
 }
