@@ -11,12 +11,6 @@ import cn.jpush.api.push.model.PushPayload;
 import cn.jpush.api.push.model.audience.Audience;
 import cn.jpush.api.push.model.notification.IosNotification;
 import cn.jpush.api.push.model.notification.Notification;
-import com.hgv.base.annotations.ApiMethod;
-import com.hgv.base.dto.ApiRequest;
-import com.hgv.base.dto.ApiResponse;
-import mtesth.api.common.service.JpushService;
-import mtesth.api.common.service.impl.JpushServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import java.sql.Timestamp;
@@ -102,25 +96,6 @@ public class JpushTest {
             e.printStackTrace();
         }
 
-        @Autowired
-        private SysMenuMapper sysMenuMapper;
 
-        @Autowired
-        private SysRoleMenuMapper sysRoleMenuMapper;
-
-        @ApiMethod(descript = "加", value = "backend.admin.adds")
-        public ApiResponse addS(ApiRequest apiReq) {
-            List<SysMenu> _results = this.sysMenuMapper.selectList(apiReq);
-            Map<String, Object> params = new HashMap<String, Object>();
-            params.put("roleId",10000);
-            List<SysRoleMenu> sysRoleMenuList = this.sysRoleMenuMapper.selectList(params);
-            for (SysMenu result : _results) {
-                for (SysRoleMenu sysRoleMenu : sysRoleMenuList) {
-                    if () {
-
-                    }
-                }
-            }
-        }
     }
 }
