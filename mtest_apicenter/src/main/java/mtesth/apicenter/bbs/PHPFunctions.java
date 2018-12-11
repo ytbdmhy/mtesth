@@ -1,6 +1,6 @@
-package mtesth.backend.apicenter.bbs;
+package mtesth.apicenter.bbs;
 
-import mtesth.backend.apicenter.bbs.utils.Base64;
+import mtesth.apicenter.bbs.utils.Base64;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -48,7 +48,7 @@ public abstract class PHPFunctions {
 
 	protected String base64_decode(String input) {
 		try {
-			return new String(mtesth.backend.apicenter.bbs.utils.Base64.decode(input.toCharArray()), "iso-8859-1");
+			return new String(mtesth.apicenter.bbs.utils.Base64.decode(input.toCharArray()), "iso-8859-1");
 		} catch (Exception e) {
 			return e.getMessage();
 		}

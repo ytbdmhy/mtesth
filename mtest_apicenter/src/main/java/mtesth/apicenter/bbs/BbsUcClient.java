@@ -1,4 +1,4 @@
-package mtesth.backend.apicenter.bbs;
+package mtesth.apicenter.bbs;
 
 import java.io.*;
 import java.net.MalformedURLException;
