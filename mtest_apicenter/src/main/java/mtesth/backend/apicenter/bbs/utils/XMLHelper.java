@@ -1,4 +1,4 @@
-package mtesth.backend.apicenter.bbs;
+package mtesth.backend.apicenter.bbs.utils;
 
 import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 import org.w3c.dom.Document;

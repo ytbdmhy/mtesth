@@ -1,0 +1,403 @@
+﻿html {
+    color: #333;
+    background: #ededed;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td, strong {
+    padding: 0;
+    margin: 0;
+    font-family: "PingFang SC", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.125;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #444;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+/*�˴������Ĭ��������ɫ*/
+strong {
+    font-style: normal;
+}
+
+caption, strong, th {
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+h1, h2, h3, h4 {
+    font-weight: normal;
+    line-height: 1;
+}
+
+legend {
+    color: #555;
+}
+
+input, button, select, option {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+input, button, select {
+    *font-size: 100%;
+}
+
+.clearfix:after {
+    display: block;
+    content: "\200B";
+    height: 0;
+    overflow: hidden;
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -0.03rem;
+}
+
+.loadbar {
+    position: relative;
+    padding: 0.2rem 0.29rem;
+    background: #FFF;
+}
+
+.dl {
+    position: relative;
+    padding: 0 0 0 1.3rem;
+}
+
+.dl dt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1rem;
+    width: 1rem;
+}
+
+.dl dt img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.dl dd {
+    height: 1rem;
+    width: 100%;
+}
+
+.dl dd p {
+    font-size: 0.28rem;
+    color: #999;
+}
+
+.dl dd p.tit {
+    padding: 0.08rem 0 0.14rem;
+    font-size: 0.35rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.btn {
+    position: absolute;
+    top: 0.46rem;
+    right: 0.29rem;
+    height: 0.48rem;
+    width: 1.02rem;
+    font-size: 0.24rem;
+    text-align: center;
+    color: #d33d3e;
+    border: 1px solid #d33d3e;
+    line-height: 0.48rem;
+    border-radius: 0.08rem;
+}
+
+.main {
+    margin: 0.2rem 0;
+    padding: 0 0.29rem;
+    background: #FFF;
+}
+
+.dl .app-opts span {
+    margin: 0 18px 0 0;
+    font-size: 0.24rem;
+}
+
+.appbar {
+    padding: 9px 0;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.posts-author {
+    padding: 0.29rem 0 0.2rem;
+}
+
+.posts-author .dl {
+    padding: 0 0 0 0.92rem;
+}
+
+.posts-author .dl dt {
+    height: 0.72rem;
+    width: 0.72rem;
+    border: 1px solid #e7e7e7;
+    border-radius: 100%;
+}
+
+.posts-author .dl dd {
+    height: 0.74rem;
+}
+
+.posts-author .dl p.tit {
+    padding: 0.1rem 0;
+    font-size: 0.26rem;
+}
+
+.posts-author .dl dd p {
+    font-size: 0.22rem;
+}
+
+.posts-tit {
+    font-size: 0.36rem;
+    color: #2a2a2a;
+    line-height: 0.58rem;
+}
+
+.posts-wrap {
+    padding: 0 0 0.5rem;
+}
+
+.posts-content img {
+    display: block;
+    margin: 0.2rem auto;
+    max-width: 100%;
+}
+
+.posts-content p {
+    font-size: 0.28rem;
+    line-height: 0.5rem;
+}
+
+.btn-lg {
+    display: block;
+    margin: 0.4rem auto 0;
+    height: 0.8rem;
+    width: 87%;
+    font-size: 0.3rem;
+    color: #FFF;
+    background: #d33d3e;
+    text-align: center;
+    line-height: 0.8rem;
+    border-radius: 0.1rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+}
+
+.modal-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    position: relative;
+    z-index: 2;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.modal-box {
+    position: relative;
+    padding: 0.3rem;
+    text-align: center;
+    width: 85.625%;
+    background: #FFF;
+    box-sizing: border-box;
+    border-radius: 0.08rem;
+}
+
+.modal-box h2 {
+    font-weight: bold;
+    font-size: 0.32rem;
+    line-height: 1.125;
+}
+
+.modal-box p {
+    margin: 0.46rem 0 0.3rem;
+    font-size: 0.28rem;
+    line-height: 1.125;
+}
+
+a.ios-load {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.4rem auto 0;
+    width: 90%;
+    height: 0.66rem;
+    font-size: 0.28rem;
+    color: #FFF;
+    background: #e60012;
+    border-radius: 0.08rem;
+}
+
+.btn-modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 0.66rem;
+    width: 0.66rem;
+    background: url(../images/icon-modal-close.png) center no-repeat;
+    background-size: 0.25rem 0.25rem;
+}
+
+.c-author .dl {
+    padding: 0 0 0 0.84rem;
+}
+
+.c-author .dl dt {
+    height: 0.64rem;
+    width: 0.64rem;
+    border: 1px solid #e7e7e7;
+    border-radius: 100%;
+}
+
+.c-author .dl dd {
+    height: auto;
+}
+
+.c-author .dl p.tit {
+    padding: 0.04rem 0 0.08rem;
+    font-size: 0.26rem;
+}
+
+.c-author .dl dd p {
+    font-size: 0.22rem;
+}
+
+.c-tit {
+    font-size: 0.36rem;
+    color: #2a2a2a;
+    line-height: 0.58rem;
+}
+
+.comments {
+    margin: 0.2rem 0;
+    background: #FFF;
+}
+
+.comments-head {
+    padding: 0 0.29rem;
+    height: 0.8rem;
+    font-size: 0.24rem;
+    color: #666;
+    line-height: 0.8rem;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.comments-list {
+    padding: 0 0.29rem;
+}
+
+.c-item {
+    padding: 0.28rem 0 0;
+}
+
+.c-content {
+    padding: 0.22rem 0 0.28rem;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.c-author .dl .c-content p {
+    font-size: 0.28rem;
+    color: #333;
+}
+
+.c-content img {
+    display: inline-block;
+    margin: 0.2rem 0.1rem 0 0;
+    width: 35%;
+}
+
+.c-opts {
+    margin: 0.2rem 0 0 0;
+    font-size: 0.28rem;
+    text-align: right;
+}
+
+.c-opts a {
+    display: inline-block;
+    height: 0.4rem;
+    font-size: 0.24rem;
+    color: #999999;
+    line-height: 0.4rem;
+}
+
+.c-opts a:first-child {
+    width: 1.1rem;
+    text-align: left;
+}
+
+.icon-like {
+    margin-right: 0.06rem;
+    height: 0.29rem;
+    width: 0.3rem;
+    background: url(../images/icon-like.png) center no-repeat;
+    background-size: 100%;
+}
+
+.icon-comment {
+    margin-right: 0.06rem;
+    height: 0.29rem;
+    width: 0.3rem;
+    background: url(../images/icon-comment.png) center no-repeat;
+    background-size: 100%;
+}
+
+.more a {
+    display: block;
+    padding: 0.44rem 0;
+    font-size: 0.28rem;
+    text-align: center;
+}

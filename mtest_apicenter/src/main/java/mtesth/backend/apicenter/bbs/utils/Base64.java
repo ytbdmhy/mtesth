@@ -36,7 +36,7 @@
  * 23.09.2003 : Initial version
  *
  */
-package mtesth.backend.apicenter.bbs;
+package mtesth.backend.apicenter.bbs.utils;
 
 import java.io.*;
 

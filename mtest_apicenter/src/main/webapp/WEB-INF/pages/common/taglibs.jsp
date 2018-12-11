@@ -10,8 +10,8 @@
 
 <%
 int serverPort = request.getServerPort();
-String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath();
-String basePath80 = request.getScheme() + "://" + request.getServerName() + request.getContextPath();
+String basePath = "//" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath();
+String basePath80 = "//" + request.getServerName() + request.getContextPath();
 %>
 <c:if test="${empty resourceVersion}">
 	<c:set var="resourceVersion" value="<%=new Date().getTime()%>" />
@@ -23,3 +23,5 @@ String basePath80 = request.getScheme() + "://" + request.getServerName() + requ
 <c:if test="${serverPort==80}">
 	<c:set var="ctx" value="<%=basePath80%>"/>
 </c:if>
+<c:set var="resourceHost" value="//ios-resource.ccplay.cc/static/resource" />
+<%--<c:set var="resourceHost" value="${ctx}"  />--%>
