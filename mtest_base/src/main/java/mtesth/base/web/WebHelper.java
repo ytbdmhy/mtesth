@@ -1,6 +1,7 @@
 package mtesth.base.web;
 
 import org.apache.commons.io.FileUtils;
+import org.springframework.util.StringUtils;
 import org.springframework.web.util.WebUtils;
 
 import javax.servlet.ServletOutputStream;
@@ -193,5 +194,27 @@ public class WebHelper {
             String value = request.getParameter(name);
             request.setAttribute(name, value);
         }
+    }
+
+    @SuppressWarnings("rawtypes")
+    public static String extractRequestHeader(HttpServletRequest req, String headerName) {
+        Enumeration aHeader = req.getHeaders(headerName);
+        if (aHeader != null) {
+            while (aHeader.hasMoreElements()) {
+                Object obj = aHeader.nextElement();
+                if (!StringUtils.isEmpty(obj)) {
+                    return obj.toString();
+                }
+            }
+        }
+        return null;
+    }
+
+    public static String getRequestUrl(HttpServletRequest req) {
+        String requestUrl = req.getScheme() + "://" + req.getServerName() + ":" + req.getServerPort() + req.getRequestURI();
+        if (req.getServerPort() == 80) {
+            requestUrl = req.getScheme() + "://" + req.getServerName() + req.getRequestURI();
+        }
+        return requestUrl;
     }
 }
