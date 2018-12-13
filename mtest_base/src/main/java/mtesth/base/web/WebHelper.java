@@ -13,6 +13,8 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2018/11/26.
@@ -164,6 +166,32 @@ public class WebHelper {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public static String outputForJsonp(String jsonpCallback, String json, HttpServletResponse response) {
+        return outputJson(jsonpCallback + "(" + json + ")", response);
+    }
+
+    @SuppressWarnings("unchecked")
+    public static Map<String, Object> buildParamMapFromRequest(HttpServletRequest request) {
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        Enumeration<String> e = request.getParameterNames();
+        while (e.hasMoreElements()) {
+            String name = e.nextElement();
+            String value = request.getParameter(name);
+            paramMap.put(name, value);
+        }
+        return paramMap;
+    }
+
+    @SuppressWarnings("unchecked")
+    public static void setRequestAttributesFromRequestParam(HttpServletRequest request) {
+        Enumeration<String> e = request.getParameterNames();
+        while (e.hasMoreElements()) {
+            String name = e.nextElement();
+            String value = request.getParameter(name);
+            request.setAttribute(name, value);
         }
     }
 }

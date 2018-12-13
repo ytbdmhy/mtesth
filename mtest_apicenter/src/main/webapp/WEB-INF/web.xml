@@ -9,6 +9,6 @@
     </context-param>
     
     <listener>
-        <listener-class>mtesth.</listener-class>
+        <listener-class>mtesth.base</listener-class>
     </listener>
 </web-app>

@@ -27,7 +27,7 @@ public class Constant {
 
     // 3.服务端收集整理的参数：
     public static final String API_CODE = "api_code";
-    public static final String REQUSET_IP = "request_ip";
+    public static final String REQUEST_IP = "request_ip";
     public static final String REQUEST_TIMESTAMP = "request_timestamp";
     public static final String USER_AGENT = "user_agent";
     public static final String CURRENT_USER_ID = "current_user_id";

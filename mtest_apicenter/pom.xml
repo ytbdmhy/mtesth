@@ -193,8 +193,8 @@
         </dependency>
 
         <dependency>
-            <groupId>com.hgv</groupId>
-            <artifactId>hgv_base</artifactId>
+            <groupId>mtest</groupId>
+            <artifactId>mtest_base</artifactId>
             <version>${base.version}</version>
         </dependency>
     </dependencies>
