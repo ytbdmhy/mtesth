@@ -1,7 +1,11 @@
 package mtesth.apicenter.web;
 
-import com.hgv.base.enums.ApiMethodEnum;
+import mtesth.base.enums.ApiMethodEnum;
 import mtesth.base.constants.Constant;
+import mtesth.base.enums.ApiServerEnum;
+import mtesth.base.utils.HttpClientUtil;
+import mtesth.base.utils.JsonUtil;
+import mtesth.base.web.SuperDispatcherServlet;
 import mtesth.base.web.WebHelper;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -83,5 +87,30 @@ public class BaseController {
     protected String callApi(ApiMethodEnum apiMethodEnum, Map<String, Object> reqParamMap) {
         Map<String, Object> dataMap = new HashMap<String, Object>();
         dataMap.put(apiMethodEnum.getCode(), reqParamMap);
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+        paramMap.put(Constant.DATA, JsonUtil.objectToJson(dataMap, Map.class));
+        HttpClientUtil clientUtil = new HttpClientUtil();
+        Map<String, String> head = new HashMap<String, String>();
+        int port = SuperDispatcherServlet.getlocalPort();
+        head.put("referer", "apicenter/" + port);
+        head.put("X-Hash-ip", (String) reqParamMap.get(Constant.REQUEST_IP));
+        clientUtil.setHttpSetting(head);
+        String retJson = clientUtil.doHttpPost(this.getApiServeURl(apiMethodEnum.getApiServer()), paramMap);
+        return retJson;
+    }
+
+    private String getApiServeURl(ApiServerEnum apiServerEnum) {
+        if (ApiServerEnum.user_api.equals(apiServerEnum)) {
+            return this.userApiServer;
+        } else if (ApiServerEnum.content_api.equals(apiServerEnum)) {
+            return this.contentApiServer;
+        } else if (ApiServerEnum.common_api.equals(apiServerEnum)) {
+            return this.commonApiServer;
+        } else if (ApiServerEnum.log_api.equals(apiServerEnum)) {
+            return this.logApiServer;
+        } else if (ApiServerEnum.forum_api.equals(apiServerEnum)) {
+            return this.forumApiServer;
+        }
+        return null;
     }
 }

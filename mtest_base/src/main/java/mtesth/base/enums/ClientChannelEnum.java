@@ -11,7 +11,24 @@ public enum ClientChannelEnum {
     /**
      * 后台渠道
      */
-    android_client()
+    android_client("android_client", "android_client"),
+    ios_client("ios_client", "ios_client"),
+    backend_client("backend_client", "backend_client"),
+
+    /**
+     * 应用渠道
+     */
+    market_360("market_360", "market_360"),
+    market_baidu("market_baidu", "market_baidu"),
+    market_tencent("market_tencent", "market_tencent"),
+    market_guanfang("market_guanfang", "market_guanfang"),
+    market_wadouja("market_wadouja", "market_wadouja"),
+    market_meizu("market_meizu", "market_meizu"),
+    market_oppo("market_oppo", "market_oppo"),
+    market_vivo("market_vivo", "market_vivo"),
+    market_jinli("market_jinli", "market_jinli"),
+    market_huawei("market_huawei", "market_huawei"),
+    market_yingyonghui("market_yingyonghui", "market_yingyonghui"),
 
     ;
 
