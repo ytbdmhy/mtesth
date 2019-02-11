@@ -9,6 +9,6 @@
     </context-param>
     
     <listener>
-        <listener-class>mtesth.base</listener-class>
+        <listener-class>mtesth.base.web.Spri</listener-class>
     </listener>
 </web-app>

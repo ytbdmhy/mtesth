@@ -1,6 +1,6 @@
 package mtesth.base.utils;
 
-import com.hgv.base.componets.SSLSocketFactoryEx;
+import mtesth.base.componets.SSLSocketFactoryEx;
 import org.apache.http.*;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -102,7 +102,6 @@ public class HttpsUtil {
 	 * HTTPS GET请求
 	 * 
 	 * @param url
-	 * @param paramMap
 	 * @return
 	 * @author daniel
 	 */

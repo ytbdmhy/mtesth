@@ -1,8 +1,12 @@
 package mtesth.apicenter.web;
 
+import mtesth.base.annotations.ApiMethod;
+import mtesth.base.dto.ApiFinalResponse;
 import mtesth.base.enums.ApiMethodEnum;
 import mtesth.base.constants.Constant;
+import mtesth.base.enums.ApiMsgEnum;
 import mtesth.base.enums.ApiServerEnum;
+import mtesth.base.interfaces.Api;
 import mtesth.base.utils.HttpClientUtil;
 import mtesth.base.utils.JsonUtil;
 import mtesth.base.web.SuperDispatcherServlet;
@@ -13,6 +17,10 @@ import org.springframework.beans.factory.annotation.Value;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -99,7 +107,7 @@ public class BaseController {
         return retJson;
     }
 
-    private String getApiServeURl(ApiServerEnum apiServerEnum) {
+    protected String getApiServeURl(ApiServerEnum apiServerEnum) {
         if (ApiServerEnum.user_api.equals(apiServerEnum)) {
             return this.userApiServer;
         } else if (ApiServerEnum.content_api.equals(apiServerEnum)) {
@@ -110,6 +118,60 @@ public class BaseController {
             return this.logApiServer;
         } else if (ApiServerEnum.forum_api.equals(apiServerEnum)) {
             return this.forumApiServer;
+        }
+        return null;
+    }
+
+    protected String outoutApiFinalResponse(String functionCode, ApiMsgEnum apiMsgEnum, HttpServletResponse rsp) {
+        if (functionCode == null || "".equals(functionCode)) {
+            functionCode = "unknown";
+        }
+        ApiFinalResponse<String> apiFinalRsp = new ApiFinalResponse<String>();
+        apiFinalRsp.setSuccess(apiMsgEnum.getSuccess());
+        apiFinalRsp.setCode(apiMsgEnum.getCode());
+        apiFinalRsp.setMsg(apiMsgEnum.getMsg());
+        Map<String, Object> jsonMap = new HashMap<String, Object>();
+        jsonMap.put(functionCode, apiFinalRsp);
+        String retJson = JsonUtil.objectToJson(jsonMap);
+        return WebHelper.outputJson(retJson, rsp);
+    }
+
+    protected String getHttpBody(HttpServletRequest request) {
+        String result = "";
+        BufferedReader in = null;
+        try {
+            in = new BufferedReader(new InputStreamReader(request.getInputStream(), "UTF-8"));
+            StringBuffer sb = new StringBuffer();
+            String tempIn = "";
+            while ((tempIn = in.readLine()) != null) {
+                sb.append(tempIn);
+            }
+            result = sb.toString();
+        } catch (Exception e) {
+            log.error("getHttpBody Exception", e);
+        } finally {
+            try {
+                if (in != null) {
+                    in.close();
+                }
+            } catch (IOException ex) {
+                log.error("getHttpBody Exception", ex);
+            }
+        }
+        return result;
+    }
+
+    protected String outputJson(String json, HttpServletResponse response) {
+//        response.reset();
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json;charset=UTF-8");
+        try {
+            PrintWriter out = response.getWriter();
+            out.print(json);
+            out.flush();
+            out.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return null;
     }
